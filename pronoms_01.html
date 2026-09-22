@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Substitució Pronominal</title>
+    <style>
+    html, body {
+        overflow-x: hidden;
+    }
+
+    body {
+        margin: 0;
+        position: relative;
+    }
+    
+    .tabla{
+        position: absolute;
+        top: 180px;
+        left: 200px;
+    }
+
+    .tabla-ejercicio{
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .tabla-ejercicio td{
+        border: 1px solid black;
+        padding: 4px 10px;
+        text-align: left;
+    }
+
+    .tabla-ejercicio td:nth-child(1){
+        width: 350px;
+        padding: 5px 10px;
+    }
+
+    .tabla-ejercicio td:nth-child(2){
+        width: 150px;
+    }
+
+    .tabla-ejercicio td:nth-child(3){
+        width: 380px;
+    }
+
+    .tabla-ejercicio input{
+        border: none;
+        border-bottom: 2px solid black;
+        background-color: rgba(255, 255, 255, 0.184);
+        outline: none;
+        font-size: 16px;
+        box-sizing: border-box;
+        width: calc(100% - 18px);
+        min-width: 0;
+    }
+
+    .linea {
+        margin-bottom: 5px;
+    }
+    
+    .vacia {
+    border: none !important;
+    background: transparent;
+    }
+
+    .botones{
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        top: 630px;
+        left: 200px;
+        justify-content: flex-start;
+        align-self: flex-start;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    #boton-reintentar{
+        visibility: hidden;
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="indice">
+        <span class="pag_actual"></span>
+    </div>
+    <nav class="navbar2">
+        <div class="logo">Substitució Pronominal</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>1. Fes la substitució pronominal de ls sintagmes nominals subratllats. Indiqueu també la funció sintàctica i el pronom que li correspon:</b></div>
+        <div class="tabla">
+            <table class="tabla-ejercicio">
+                <tr>
+                    <td class="vacia"></td>
+                    <td><b>Funció i pronom</b></td>
+                    <td><b>Oració amb pronoms davant i darrere del verb</b></td>
+                </tr>
+                <tr>
+                    <td>Dona <u>el regal</u> <u>a la noia</u>.</td>
+                    <td><div class="linea">1. CD, el</div><div>2. CI, li</div></td>
+                    <td><i>L'hi dona.</div><div>Dona-l'hi.</i></td>
+                </tr>
+
+                <tr>
+                    <td>Van donar <u>a les persones sordes</u> <u>motxilles que vibraven al ritme de la música</u>.</td>
+                    <td><div class="linea">1. <input type="text" class="respuesta" data-correct="CI, els"></div><div>2. <input type="text" class="respuesta" data-correct="CD, en"></div></td>
+                    <td><div class="linea">1. <input type="text" class="respuesta" data-correct="Els en van donar"></div><div>2. <input type="text" class="respuesta" data-correct="Van donar-los-en"></div></td>
+                </tr>
+                <tr>
+                    <td>L'Anna i tres companys més interpretaven <u>les cançons</u> <u>des d'un espai a la pista</u>.</td>
+                    <td><div class="linea">1. <input type="text" class="respuesta" data-correct="CD, les"></div><div>2. <input type="text" class="respuesta" data-correct="CC, hi"></div></td>
+                    <td>1. <input type="text" class="respuesta" data-correct="L'Anna i tres companys més les hi interpretaven"></td>
+                </tr>
+                <tr>
+                    <td>Van donar <u>els regals</u> <u>al fill</u>.</td>
+                    <td><div class="linea">1. <input type="text" class="respuesta" data-correct="CD, els"></div><div>2. <input type="text" class="respuesta" data-correct="CI, li"></div></td>
+                    <td><div class="linea">1. <input type="text" class="respuesta" data-correct="Els hi van donar"></div><div>2. <input type="text" class="respuesta" data-correct="Van donar-los-hi"></div></td>
+                </tr>
+                <tr>
+                    <td>Els meus pares han comprat <u>l'enciclopèdia</u> <u>al llibreter</u>.</td>
+                    <td><div class="linea">1. <input type="text" class="respuesta" data-correct="CD, la"></div><div>2. <input type="text" class="respuesta" data-correct="CI, li"></div></td>
+                    <td>1. <input type="text" class="respuesta" data-correct="Els meus pares la hi han comprat"></td>
+                </tr>
+                <tr>
+                    <td>Han de portar <u>galetes</u> <u>a l'escola</u>.</td>
+                    <td><div class="linea">1. <input type="text" class="respuesta" data-correct="CD, en"></div><div>2. <input type="text" class="respuesta" data-correct="CC, hi"></div></td>
+                    <td><div class="linea">1. <input type="text" class="respuesta" data-correct="N'hi han de portar"></div><div>2. <input type="text" class="respuesta" data-correct="Han de portar-n'hi"></div></td>
+                </tr>
+                <tr>
+                    <td>Donarem <u>la notícia</u> <u>a la María</u>.</td>
+                    <td><div class="linea">1. <input type="text" class="respuesta" data-correct="CD, la"></div><div>2. <input type="text" class="respuesta" data-correct="CI, li"></div></td>
+                    <td>1. <input type="text" class="respuesta" data-correct="La hi donarem"></td>
+                </tr>
+                    <td>Penso molt <u>en tu</u>.</td>
+                    <td><div class="linea">1. <input type="text" class="respuesta" data-correct="CRV, hi"></div></td>
+                    <td>1. <input type="text" class="respuesta" data-correct="Hi penso molt"></td>
+                </tr>
+
+            </table>
+        </div>
+        
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar">Reintentar</button>
+        </div>
+    </div>
+    <script>
+    const inputs = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        inputs.forEach(input => {
+            const valor = input.value.trim().toLowerCase().replace(/\./g, "");
+            const correcta = input.dataset.correct.toLowerCase();
+            if (valor === correcta) {
+                input.style.background = "rgba(0,255,0,0.25)";
+                input.disabled = true;
+            } else {
+                input.style.background = "rgba(255,0,0,0.25)";
+            }
+        });
+        botonReintentar.style.visibility = "visible";
+    }
+
+    function reintentar() {
+        inputs.forEach(input => {
+            input.value = "";
+            input.style.background = "rgba(255, 255, 255, 0.184)"; // estado inicial
+            input.disabled = false; // desbloqueamos todos
+        });
+        botonReintentar.style.visibility = "hidden"; // ocultamos reintentar
+    }
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+        
+    </script>
+
+</body>
+</html>

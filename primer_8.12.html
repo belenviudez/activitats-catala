@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>1r de Batxillerat - Les Funcions Sintàctiques</title>
+    <style>
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .tabla{
+        position: absolute;
+        top: 180px;
+        left: 200px;
+        display: block;
+        text-align: right;
+}
+
+    .tabla-ejercicio{
+        border-collapse: collapse;
+    }
+
+    .tabla-ejercicio td{
+        border: 1px solid black;
+        padding: 9px;
+        min-width: 120px;
+        text-align: center;
+    }
+
+    .tabla-ejercicio input{
+        flex: 1;
+        width: fit-content;
+        border: none;
+        border-bottom: 2px solid black;
+        background-color: rgba(255, 255, 255, 0.184);
+        outline: none;
+        font-size: 16px;
+    }
+
+    .tabla-ejercicio select.respuestaselects {
+        background-color: rgba(255, 255, 255, 0.184);
+        font-size: 16px;
+        width: 230px;
+        border: none;
+        border-bottom: 2px solid black;
+        outline: none;
+        margin: 0 5px;
+    }
+
+    .botones{
+        display: flex;
+        gap: 20px;
+        position: absolute;
+        top: 630px;
+        left: 200px;
+        justify-content: flex-start;
+        align-self: flex-start;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    #boton-reintentar{
+        visibility: hidden;
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="primer_8.01.html" class="pag_diferent"></a>
+        <a href="primer_8.04.html" class="pag_diferent"></a>
+        <a href="primer_8.05.html" class="pag_diferent"></a>
+        <a href="primer_8.06.html" class="pag_diferent"></a>
+        <a href="primer_8.07.html" class="pag_diferent"></a>
+        <a href="primer_8.08.html" class="pag_diferent"></a>
+        <a href="primer_8.09.html" class="pag_diferent"></a>
+        <a href="primer_8.10.html" class="pag_diferent"></a>
+        <a href="primer_8.11.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="primer_8.13.html" class="pag_diferent"></a>
+        <a href="primer_8.14.html" class="pag_diferent"></a>
+        <a href="primer_8.15.html" class="pag_diferent"></a>
+        <a href="primer_8.16.html" class="pag_diferent"></a>
+        <a href="primer_8.17.html" class="pag_diferent"></a>
+        <a href="primer_8.18.html" class="pag_diferent"></a>
+        <a href="primer_8.19.html" class="pag_diferent"></a>
+        <a href="primer_8.20.html" class="pag_diferent"></a>
+        <a href="primer_8.21.html" class="pag_diferent"></a>
+        <a href="primer_8.24.html" class="pag_diferent"></a>
+    </div>
+    <nav class="navbar2">
+        <div class="logo">1r de Batxillerat - Les Funcions Sintàctiques</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>12. Identifica els verbs transitius i els que exigeixen una preposició. En aquest segon cas, indica-la; si no, deixa la casella buida:</b></div>
+        <div class="tabla">
+            <table class="tabla-ejercicio">
+                <tr>
+                    <td><b>Verb</b></td>
+                    <td><b>Transitiu / Règim Prep.</b></td>
+                    <td><b>Règim preposicional</b></td>
+                </tr>
+
+                <tr>
+                    <td>recordar</td>
+                    <td><select class="respuestaselects">
+                        <option value=""></option>
+                        <option value="t">Transitiu</option>
+                        <option value="r">Règim preposicional</option>
+                    </select></td>
+                    <td><input type="text" class="respuesta" data-correct=""></td>
+                </tr>
+
+                <tr>
+                    <td>recordar-se</td>
+                    <td><select class="respuestaselects">
+                        <option value=""></option>
+                        <option value="t">Transitiu</option>
+                        <option value="r">Règim preposicional</option>
+                    </select></td>
+                    <td><input type="text" class="respuesta" data-correct="de"></td>
+                </tr>
+
+                <tr>
+                    <td>accedir</td>
+                    <td><select class="respuestaselects">
+                        <option value=""></option>
+                        <option value="t">Transitiu</option>
+                        <option value="r">Règim preposicional</option>
+                    </select></td>
+                    <td><input type="text" class="respuesta" data-correct="a"></td>
+                </tr>
+
+                <tr>
+                    <td>adonar-se</td>
+                    <td><select class="respuestaselects">
+                        <option value=""></option>
+                        <option value="t">Transitiu</option>
+                        <option value="r">Règim preposicional</option>
+                    </select></td>
+                    <td><input type="text" class="respuesta" data-correct="de"></td>
+                </tr>
+
+                <tr>
+                    <td>exposar-se</td>
+                    <td><select class="respuestaselects">
+                        <option value=""></option>
+                        <option value="t">Transitiu</option>
+                        <option value="r">Règim preposicional</option>
+                    </select></td>
+                    <td><input type="text" class="respuesta" data-correct="a"></td>
+                </tr>
+
+                <tr>
+                    <td>avenir-se</td>
+                    <td><select class="respuestaselects">
+                        <option value=""></option>
+                        <option value="t">Transitiu</option>
+                        <option value="r">Règim preposicional</option>
+                    </select></td>
+                    <td><input type="text" class="respuesta" data-correct="amb"></td>
+                </tr>
+
+                <tr>
+                    <td>estudiar-se</td>
+                    <td><select class="respuestaselects">
+                        <option value=""></option>
+                        <option value="t">Transitiu</option>
+                        <option value="r">Règim preposicional</option>
+                    </select></td>
+                    <td><input type="text" class="respuesta" data-correct=""></td>
+                </tr>
+
+                <tr>
+                    <td>convidar</td>
+                    <td><select class="respuestaselects">
+                        <option value=""></option>
+                        <option value="t">Transitiu</option>
+                        <option value="r">Règim preposicional</option>
+                    </select></td>
+                    <td><input type="text" class="respuesta" data-correct=""></td>
+                </tr>
+
+                <tr>
+                    <td>resignar-se</td>
+                    <td><select class="respuestaselects">
+                        <option value=""></option>
+                        <option value="t">Transitiu</option>
+                        <option value="r">Règim preposicional</option>
+                    </select></td>
+                    <td><input type="text" class="respuesta" data-correct="a"></td>
+                </tr>
+
+                <tr>
+                    <td>renunciar</td>
+                    <td><select class="respuestaselects">
+                        <option value=""></option>
+                        <option value="t">Transitiu</option>
+                        <option value="r">Règim preposicional</option>
+                    </select></td>
+                    <td><input type="text" class="respuesta" data-correct="a"></td>
+                </tr>
+
+            </table>
+        </div>
+        
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar">Reintentar</button>
+        </div>
+    </div>
+    <script>
+    
+    const respuestas = [
+        "t","r","r","r","r","r", "t", "t", "r", "r"
+    ];
+    const selects = document.querySelectorAll('.respuestaselects');
+    const inputs = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        inputs.forEach(input => {
+            const valor = input.value.trim().toLowerCase();
+            const correcta = input.dataset.correct.toLowerCase();
+            if (valor === correcta) {
+                input.style.background = "rgba(0,255,0,0.25)";
+                input.disabled = true;
+            } else {
+                input.style.background = "rgba(255,0,0,0.25)";
+            }
+        });
+        selects.forEach((select, index) => {
+            if(select.value === respuestas[index]) {
+                select.style.background = "rgba(0,255,0,0.25)";
+                select.disabled = true;
+            } else {
+                select.style.background = "rgba(255,0,0,0.25)";
+                select.disabled = false;
+            }
+        });
+        botonReintentar.style.visibility = "visible";
+    }
+
+    function reintentar() {
+        inputs.forEach(input => {
+            input.value = "";
+            input.style.background = "rgba(255, 255, 255, 0.184)"; // estado inicial
+            input.disabled = false; // desbloqueamos todos
+        });
+        selects.forEach(select => {
+            select.style.background = "rgba(255,255,255,0.148)";
+            select.value = "";
+            select.disabled = false;
+        });
+        botonReintentar.style.visibility = "hidden"; // ocultamos reintentar
+    }
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>1r de Batxillerat - L'Oració Simple i Composta: Coordinació i Juxtaposició</title>
+
+  <style>
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .tabla {
+        position: absolute; 
+        top: 180px; 
+        left: 200px;
+        display: grid; 
+        grid-template-columns: 1fr; 
+        column-gap: 40px;
+        counter-reset: letra;
+    }
+
+    .lista {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .lista li {
+        counter-increment: letra;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+        width: 800px;
+    }
+
+    .lista li::before {
+        content: counter(letra, lower-alpha) ") ";
+        width: 30px;
+    }
+
+
+    .lista li span {
+        width: max-content;
+    }
+
+    .lista input {
+        flex: 1;
+        border: none;
+        border-bottom: 2px solid black;
+        background-color: rgba(255, 255, 255, 0.184);
+        outline: none;
+        min-width: 0;
+        width: max-content;
+        font-size: 16px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .botones {
+        position: absolute; 
+        top: 430px; 
+        left: 200px; 
+        align-items: left;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="primer_9.08.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+    </div>
+  <nav class="navbar2">
+        <div class="logo">1r de Batxillerat - L'Oració Simple i Composta: Coordinació i Juxtaposició</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>9. Indica el tipus i el subtipus de les oracions següents:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li><span>Vens amb mi o te'n vas amb ells a la platja? &rarr; Oració</span> <input type="text" class="respuesta"></li>
+                <li><span>Ahir no actuava el grup d'en Cesc sinó els Manel. &rarr; Oració</span> <input type="text" class="respuesta"></span></li>
+                <li><span>La idea no els feia el pes; no obstant això, s'hi van afegir. &rarr; Oració</span> <input type="text" class="respuesta"></li>
+                <li><span>Ho van intentar, però no se'n van sortir. &rarr; Oració</span> <input type="text" class="respuesta"></li>
+                <li><span>Li van concedir una pensió i, a més, la medalla del treball. &rarr; Oració</span> <input type="text" class="respuesta"></li>
+                <li><span>Aquell noi no és mosso, sinó bomber. &rarr; Oració</span> <input type="text" class="respuesta"></li>
+                <li><span>Mai es troba bé. O està trist o està cansat. &rarr; Oració</span> <input type="text" class="respuesta"></li>
+            </ol>
+        </div>
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+        </div>    
+    </div>
+    <script>
+    // Lista de respuestas correctas en orden
+    const respuestas = [
+        ["coordinada disjuntiva"],
+        ["coordinada adversativa"],
+        ["coordinada adversativa"],
+        ["coordinada adversativa"],
+        ["coordinada copulativa"],
+        ["coordinada adversativa"],
+        ["coordinada disjuntiva"]
+    ];
+    
+    const inputs = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        inputs.forEach((input, index) => {
+            const valor = input.value.trim().toLowerCase();
+            const opcionesCorrectas = respuestas[index].map(r => r.toLowerCase());
+            if (opcionesCorrectas.includes(valor)) {
+                input.style.background = "rgba(0, 255, 0, 0.25)";
+                input.disabled = true;
+            } else {
+                input.style.background = "rgba(255, 0, 0, 0.25)";
+                input.disabled = false;
+            }
+        });
+    botonReintentar.style.display = "inline-block";
+    }
+
+    function reintentar() {
+        inputs.forEach(input => {
+            input.value = "";
+            input.style.background = "rgba(255, 255, 255, 0.184)"; // estado inicial
+            input.disabled = false; // desbloqueamos todos
+        });
+        botonReintentar.style.display = "none"; // ocultamos reintentar
+    }
+
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+</script>    
+</body>
+</html>

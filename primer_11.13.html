@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>1r de Batxillerat - Relacions Semàntiques</title>
+
+  <style>
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .tabla {
+        position: absolute; 
+        top: 180px; 
+        left: 200px;
+        display: grid; 
+        grid-template-columns: 400px 400px; 
+        column-gap: 80px;
+        counter-reset: letra;
+    }
+    .lista {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .lista li {
+        counter-increment: letra;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+        width: 100%;
+        display: flex;
+    }
+
+    .lista li::before {
+        content: counter(letra, lower-alpha) ") ";
+        width: 30px;
+    }
+
+    .lista select.respuesta {
+        flex: 1;
+        width: max-content;
+        min-width: 0;
+        background-color: rgba(255, 255, 255, 0.184);
+        font-size: 16px;
+        border: none;
+        border-bottom: 2px solid black;
+        outline: none;
+        margin: 0 5px;
+    }
+
+    .botones {
+        position: absolute; 
+        top: 470px; 
+        left: 200px; 
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="primer_11.01.html" class="pag_diferent"></a>
+        <a href="primer_11.02.html" class="pag_diferent"></a>
+        <a href="primer_11.03.html" class="pag_diferent"></a>
+        <a href="primer_11.05.html" class="pag_diferent"></a>
+        <a href="primer_11.06.html" class="pag_diferent"></a>
+        <a href="primer_11.07.html" class="pag_diferent"></a>
+        <a href="primer_11.08.html" class="pag_diferent"></a>
+        <a href="primer_11.09.html" class="pag_diferent"></a>
+        <a href="primer_11.10.html" class="pag_diferent"></a>
+        <a href="primer_11.11.html" class="pag_diferent"></a>
+        <a href="primer_11.12.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="primer_11.15.html" class="pag_diferent"></a>
+        <a href="primer_11.17.html" class="pag_diferent"></a>
+        <a href="primer_11.18.html" class="pag_diferent"></a>
+        <a href="primer_11.19.html" class="pag_diferent"></a>
+        <a href="primer_11.20.html" class="pag_diferent"></a>
+        <a href="primer_11.23.html" class="pag_diferent"></a>
+        <a href="primer_11.25.html" class="pag_diferent"></a>
+        <a href="primer_11.26.html" class="pag_diferent"></a>
+        <a href="primer_11.27.html" class="pag_diferent"></a>
+        <a href="primer_11.28.html" class="pag_diferent"></a>
+        <a href="primer_11.29.html" class="pag_diferent"></a>
+        <a href="primer_11.30.html" class="pag_diferent"></a>
+    </div>
+  <nav class="navbar2">
+        <div class="logo">1r de Batxillerat - Relacions Semàntiques</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>13. Relaciona cada mot amb el seu antònim:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li><span class="frase">ostentació &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">emocionar &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">grolleria &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">vigilar &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">eteri &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">aixoplugar &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">aspre &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">pignorar &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+            </ol>
+            
+            <ol class="lista">
+                <li><span class="frase">equívoc &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">esponerós &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">elucidar &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">d'hora &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">oblit &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">feiner &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">meridional &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+                <li><span class="frase">frenètic &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="cortesia">cortesia</option>
+                        <option value="negligir">negligir</option>
+                        <option value="corpori">corpori</option>
+                        <option value="desemparar">desemparar</option>
+                        <option value="asserenar">asserenar</option>
+                        <option value="septentrional">septentrional</option>
+                        <option value="clar">clar</option>
+                        <option value="marcit">marcit</option>
+                        <option value="desempenyorar">desempenyorar</option>
+                        <option value="festiu">festiu</option>
+                        <option value="record">record</option>
+                        <option value="tard">tard</option>
+                        <option value="modèstia">modèstia</option>
+                        <option value="suau">suau</option>
+                        <option value="tranquil">tranquil</option>
+                        <option value="enterbolir">enterbolir</option>
+                    </select>
+                </li>
+            </ol>
+        </div>
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+        </div>    
+    </div>
+    <script>
+    // Lista de respuestas correctas en orden
+    const respuestas = [
+        "modèstia", "asserenar", "cortesia", "negligir", "corpori", "desemparar", "suau", "desempenyorar",
+        "clar", "marcit", "enterbolir", "tard", "record", "festiu", "septentrional", "tranquil"
+    ];
+    
+    const selects = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        selects.forEach((select, index) => {
+            if(select.value === respuestas[index]) {
+                select.style.background = "rgba(0,255,0,0.25)";
+                select.disabled = true;
+            } else {
+                select.style.background = "rgba(255,0,0,0.25)";
+                select.disabled = false;
+            }
+        });
+        botonReintentar.style.display = "inline-block";
+    }
+
+    function reintentar() {
+        selects.forEach(select => {
+            select.selectedIndex = 0;
+            select.style.background = "rgba(255,255,255,0.184)";
+            select.disabled = false;
+        });
+        botonReintentar.style.display = "none";
+    }
+ 
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+</script>    
+</body>
+</html>

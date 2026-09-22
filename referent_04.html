@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Referent</title>
+    <style>
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .tabla{
+        margin: 0;
+    }
+
+    .tabla-ejercicio{
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    .tabla-ejercicio td{
+        border: 1px solid black;
+        padding: 10px;
+        text-align: flex-start;
+    }
+
+    .tabla-ejercicio td:nth-child(1){
+        width: 650px;
+        flex-wrap: wrap;
+    }
+
+    .tabla-ejercicio td:nth-child(2){
+        width: 270px;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 5px;
+        line-height: 25px;
+    }
+
+    .tabla-ejercicio td:nth-child(3){
+        width: fit-content;
+        line-height: 25px;
+    }
+
+    .tabla-ejercicio td:nth-child(2) input {
+        width: 206px;
+        min-width: 0;
+        margin-left: 5px;
+    }
+
+    .tabla-ejercicio td:nth-child(3) input {
+        width: 100px;
+        box-sizing: border-box;
+    }
+
+    .tabla-ejercicio input{
+        min-width: 0;
+        border: none;
+        border-bottom: 2px solid black;
+        background-color: rgba(255, 255, 255, 0.184);
+        outline: none;
+        font-size: 16px;
+    }
+
+    .contenedor-tablas{
+        position: absolute;
+        display: flex;
+        gap: 40px;
+        top: 180px;
+        left: 200px;
+        justify-content: flex-start;
+    }
+
+    .botones{
+        position: absolute;
+        display: flex;
+        justify-content: flex-start;
+        top: 500px;
+        left: 200px;
+    }
+
+    .vacia {
+        border: none !important;
+        background: transparent;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    #boton-reintentar{
+        visibility: hidden;
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="referent_01.html" class="pag_diferent"></a>
+        <a href="referent_02.html" class="pag_diferent"></a>
+        <a href="referent_03.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="referent_05.html" class="pag_diferent"></a>
+    </div>
+    <nav class="navbar2">
+        <div class="logo">Referent</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>4. Indica quins sintagmes substitueixen els pronoms febles subratllats i les sigles de la seva funció sintàctica corresponent:</b></div>
+        <div class="contenedor-tablas">
+            <div class="tabla">
+                <table class="tabla-ejercicio">
+                    <tr>
+                        <td class="vacia"></td>
+                        <td><b>Referent</b></td>
+                        <td><b>Funció</b></td>
+                    </tr>
+
+                    <tr>
+                        <td>Hi havia cecs <b>que</b> que venien romanços, i unes dones espitregades oferien per dos xavos el retrat del general Mina.</td>
+                        <td><span>que:</span><input type="text" class="respuesta" data-correct="cecs"></td>
+                        <td><input type="text" class="respuesta" data-correct="subjecte"></td>
+                    </tr>
+
+                    <tr>
+                        <td>... el dia i a l'hora mateixa en <b>què</b> la seva òpera era aplaudida amb deliri al Principal.</td>
+                        <td><span>què:</span><input type="text" class="respuesta" data-correct="el dia i a l'hora mateixa"></td>
+                        <td><input type="text" class="respuesta" data-correct="cc"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Avui hi ha hagut eclipsi de Sol, i uns forasters, protegits amb escuts fets amb el cuir que jo mateix vaig veure ahir al migdia estibat a la tenda del baster, han vingut a casa per endur-se'<b>n</b> el meu pare.</td>
+                        <td><span>'n':</span><input type="text" class="respuesta" data-correct="de casa"></td>
+                        <td><input type="text" class="respuesta" data-correct="cc"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Jo he passat la nit a la falda de la mare, i he somiat que amarinàvem galeres a la riba del Màrmara i que els turcs afavorien els nostres designis tot nodrint-<b>nos</b> amb nèctars mentre les dones del país ballaven llurs danses o recitaven estramps en català antic.</td>
+                        <td><span>-nos:</span><input type="text" class="respuesta" data-correct="nosaltres"></td>
+                        <td><input type="text" class="respuesta" data-correct="cd"></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar">Reintentar</button>
+        </div>
+    </div>
+    <script>
+    const inputs = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        inputs.forEach(input => {
+            const valor = input.value.trim().toLowerCase().replace(/[.,;:]/g, "");
+            const correcta = input.dataset.correct.toLowerCase();
+            if (valor === correcta) {
+                input.style.background = "rgba(0,255,0,0.25)";
+                input.disabled = true;
+            } else {
+                input.style.background = "rgba(255,0,0,0.25)";
+            }
+        });
+        botonReintentar.style.visibility = "visible";
+    }
+
+    function reintentar() {
+        inputs.forEach(input => {
+            input.value = "";
+            input.style.background = "rgba(255, 255, 255, 0.184)"; // estado inicial
+            input.disabled = false; // desbloqueamos todos
+        });
+        botonReintentar.style.visibility = "hidden"; // ocultamos reintentar
+    }
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>1r de Batxillerat - L'Adverbi</title>
+
+  <style>
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .tabla {
+        position: absolute; 
+        top: 180px; 
+        left: 200px;
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        column-gap: 50px;
+        width: 900px;
+        counter-reset: letra;
+    }
+    .lista {
+        list-style: none;
+        padding-left: 0px;
+        width: 400px;
+    }
+
+    .lista li {
+        counter-increment: letra;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+        width: flex;
+    }
+
+    .lista li::before {
+        content: counter(letra, lower-alpha) ") ";
+        width: 30px;
+    }
+    .lista span.frase {
+        display: inline;
+    }
+
+    .lista select.respuesta {
+        background-color: rgba(255, 255, 255, 0.184);
+        font-size: 16px;
+        flex: 1;
+        min-width: 0px;
+        border: none;
+        border-bottom: 2px solid black;
+        outline: none;
+        margin: 0 5px;
+    }
+
+    .botones {
+        position: absolute; 
+        top: 465px; 
+        left: 200px; 
+        align-items: left;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="primer_7.01.html" class="pag_diferent"></a>
+        <a href="primer_7.02.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="primer_7.04.html" class="pag_diferent"></a>
+        <a href="primer_7.05.html" class="pag_diferent"></a>
+        <a href="primer_7.06.html" class="pag_diferent"></a>
+        <a href="primer_7.07.html" class="pag_diferent"></a>
+        <a href="primer_7.10.html" class="pag_diferent"></a>
+        <a href="primer_7.12.html" class="pag_diferent"></a>
+        <a href="primer_7.13.html" class="pag_diferent"></a>
+        <a href="primer_7.15.html" class="pag_diferent"></a>
+        <a href="primer_7.18.html" class="pag_diferent"></a>
+    </div>
+  <nav class="navbar2">
+        <div class="logo">1r de Batxillerat - L'Adverbi</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>3. Relaciona les locucions adverbiales amb el seu significat:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li><span class="frase">amb prou feines &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">a contracor &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">de soca-rel &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">bitllo-bitllo &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">a dretes &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">amb quatre esgarrapades &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">de trascanto &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">comptat i debatut &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+            </ol>
+
+            <ol class="lista">
+                <li><span class="frase">en orri &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">de tot cor &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">xano-xano &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">de sotamà &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">a l'encop &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">de gairell &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">a dreta llei &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+                <li><span class="frase">a la balquena &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="íntegrament">íntegrament</option>
+                        <option value="amb dificultats">amb dificultats</option>
+                        <option value="de costat">de costat</option>
+                        <option value="en justícia estricta">en justícia estricta</option>
+                        <option value="al comptat">al comptat</option>
+                        <option value="d'amagat">d'amagat</option>
+                        <option value="en abundància">en abundància</option>
+                        <option value="sincerament">sincerament</option>
+                        <option value="precipitadament">precipitadament</option>
+                        <option value="considerat tot">considerat tot</option>
+                        <option value="d'una manera imprevista">d'una manera imprevista</option>
+                        <option value="espatllar-se o perdre's">espatllar-se o perdre's</option>
+                        <option value="expressament">expressament</option>
+                        <option value="amb recança">amb recança</option>
+                        <option value="alhora">alhora</option>
+                        <option value="a poc a poc">a poc a poc</option>
+                    </select>
+                </li>
+            </ol>
+
+        </div>
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+        </div>
+    </div>
+    <script>
+    // Lista de respuestas correctas en orden
+    const respuestas = [
+  "amb dificultats","amb rencança","íntegrament","al comptat",
+  "expressament","precipitadament","d'una manera imprevista",
+  "considerat tot","espatllar-se o perdre's","sincerament",
+  "a poc a poc","d'amagat","alhora","de costat", "en justícia estricta",
+  "en abundància"
+];
+    
+    const selects = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        selects.forEach((select, index) => {
+            if(select.value === respuestas[index]) {
+                select.style.background = "rgba(0,255,0,0.25)";
+                select.disabled = true;
+            } else {
+                select.style.background = "rgba(255,0,0,0.25)";
+                select.disabled = false;
+            }
+        });
+        botonReintentar.style.display = "inline-block";
+    }
+
+    function reintentar() {
+        selects.forEach(select => {
+            select.selectedIndex = 0;
+            select.style.background = "rgba(255,255,255,0.184)";
+            select.disabled = false;
+        });
+        botonReintentar.style.display = "none";
+    }
+ 
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+</script>    
+</body>
+</html>

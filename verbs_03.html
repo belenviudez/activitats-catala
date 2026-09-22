@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Verbs</title>
+  <style>
+    .tabla {
+        position: absolute; 
+        top: 180px; 
+        left: 200px; 
+        display: grid; 
+        grid-template-columns: 1fr; 
+        column-gap: 80px;
+        counter-reset: letra;
+    }
+    .lista {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .lista li {
+        counter-increment: letra;
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 16px;
+        min-width: 400px
+    }
+
+    .lista li::before {
+        content: counter(letra, lower-alpha) ") ";
+        width: 30px;
+    }
+    .lista li span {
+        width: fit-content;
+        margin-right: 0px;
+    }
+
+    .lista input {
+        border: none;
+        border-bottom: 2px solid black;
+        background-color: rgba(255, 255, 255, 0.184);
+        outline: none;
+        width: 120px;
+        font-size: 16px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .botones {
+        position: absolute; 
+        top: 500px; 
+        left: 200px; 
+        align-items: left;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="verbs_01.html" class="pag_diferent"></a>
+        <a href="verbs_02.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+    </div>
+  <nav class="navbar2">
+        <div class="logo">Verbs</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>3. Completa les oracions següents amb la forma verbal correcta del verb entre parèntesis. No pots utilitzar formes perifràstiques:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li><span>No l'ha deixat parlar. L'ha</span><input type="text" class="respuesta"><span>(<i>interrompre</i>) un munt de vegades.</span></li>
+                <li><span>Si tu</span><input type="text" class="respuesta"><span>(<i>saber</i>) el temps que fa que l'espero.</span></li>
+                <li><span>Aquest gos</span><input type="text" class="respuesta"><span>(<i>grunyir</i>) molt sovint, sobretot quan el vols acariciar.</span></li>
+                <li><span>Cal que els usuaris</span><input type="text" class="respuesta"><span>(<i>donar</i>) el seu consentiment per fer públiques les seves dades personals.</span></li>
+                <li><span>Els estels</span><input type="text" class="respuesta"><span>(<i>lluir</i>) molt quan el cel està serè.</span></li>
+                <li><span>Aquestes mongetes són crues. No s'han</span><input type="text" class="respuesta"><span>(<i>cuit</i>) prou.</span></li>
+                <li><span>Tu no li</span><input type="text" class="respuesta"><span>(<i>donar</i>) sempré la raó, perquè molt sovint s'equivoca.</span></li>
+                <li><span>Ara</span><input type="text" class="respuesta"><span>(<i>reconèixer</i>) l'error que he comès.</span></li>
+                <li><span>Si cada dia li</span><input type="text" class="respuesta"><span>(<i>escapçar</i>) una mica la tija, al final et quedaràs sense planta.</span></li>
+                <li><span>Ara em demana que li</span><input type="text" class="respuesta"><span>(<i>fer</i>) costat, però jo no em vull comprometre a res.</span></li>
+            </ol>
+        </div>
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+        </div>    
+    </div>
+    <script>
+    // Lista de respuestas correctas en orden
+    const respuestas = [
+        ["interromput"],
+        ["sabessis"],
+        ["gruny"],
+        ["donin"],
+        ["lluen"],
+        ["cuit"],
+        ["donis"],
+        ["reconec"],
+        ["escapces"],
+        ["faci"]
+    ];
+    
+    const inputs = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        inputs.forEach((input, index) => {
+            const valor = input.value.trim().toLowerCase().replace(/\.$/, '');
+            const opcionesCorrectas = respuestas[index].map(r => r.toLowerCase());
+            if (opcionesCorrectas.includes(valor)) {
+                input.style.background = "rgba(0, 255, 0, 0.25)";
+                input.disabled = true;
+            } else {
+                input.style.background = "rgba(255, 0, 0, 0.25)";
+                input.disabled = false;
+            }
+        });
+        botonReintentar.style.display = "inline-block";
+    }
+
+    function reintentar() {
+        inputs.forEach(input => {
+            input.value = "";
+            input.style.background = "rgba(255, 255, 255, 0.184)"; // estado inicial
+            input.disabled = false; // desbloqueamos todos
+        });
+        botonReintentar.style.display = "none"; // ocultamos reintentar
+    }
+ 
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+    </script>    
+</body>
+</html>

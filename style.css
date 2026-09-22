@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffb362;
+  color: rgb(0, 0, 0);
+  gap: 10px;
+}
+
+/* Título */
+.hero h1 {
+  position: absolute;
+  top: 130px;
+  text-align: center;
+  font-size: 5rem;
+}
+
+/* Texto */
+.hero p {
+  max-width: 1200px; 
+  width: 100%;
+  text-align: left; 
+  font-size: 1rem;
+  margin-bottom: 0px; 
+  line-height: 1.5;  
+}
+
+button a {
+  text-decoration: none; 
+  color: inherit;
+}
+
+.hero2 {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 100px;
+  background: linear-gradient(135deg, #fba74e, #ffe6c4);
+  color: rgb(0, 0, 0);
+  gap: 10px;
+}
+
+.hero2 p {
+  max-width: 1200px; 
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  margin-bottom: 0px;
+  line-height: 1.5;
+}
+
+.hero2 .titol {
+  color: black;
+  font-size: 1rem;
+  position: absolute;
+  top: 150px;
+  height: auto;
+  left: 200px;
+  align-items: left;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.navbar2 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  color: white;
+  z-index: 1000;
+}
+
+.menu2 {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu2 a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  color: white;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Menu normal (desktop) */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+
+details {
+  width: 1200px;
+  padding: 10px;
+  border-radius: 0px;
+  margin-bottom: -10px;
+}
+
+details a {
+  text-decoration: none;
+  color: rgb(39, 39, 39);
+  margin: 8px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0px;
+    height: 450px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.248);
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 1px;
+    display: none;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+}

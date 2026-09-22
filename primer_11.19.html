@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>1r de Batxillerat - Relacions Semàntiques</title>
+
+  <style>
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .tabla {
+        position: absolute; 
+        top: 180px; 
+        left: 200px;
+        display: grid; 
+        grid-template-columns: 530px 530px; 
+        column-gap: 40px;
+        counter-reset: letra;
+    }
+    .lista {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .lista li {
+        counter-increment: letra;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+        width: 100%;
+        display: flex;
+    }
+
+    .lista li::before {
+        content: counter(letra, lower-alpha) ") ";
+        width: 30px;
+    }
+
+    .lista select.respuesta {
+        flex: 1;
+        width: max-content;
+        min-width: 0;
+        background-color: rgba(255, 255, 255, 0.184);
+        font-size: 16px;
+        border: none;
+        border-bottom: 2px solid black;
+        outline: none;
+        margin: 0 5px;
+    }
+
+    .botones {
+        position: absolute; 
+        top: 325px; 
+        left: 200px; 
+        align-items: left;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="primer_11.01.html" class="pag_diferent"></a>
+        <a href="primer_11.02.html" class="pag_diferent"></a>
+        <a href="primer_11.03.html" class="pag_diferent"></a>
+        <a href="primer_11.05.html" class="pag_diferent"></a>
+        <a href="primer_11.06.html" class="pag_diferent"></a>
+        <a href="primer_11.07.html" class="pag_diferent"></a>
+        <a href="primer_11.08.html" class="pag_diferent"></a>
+        <a href="primer_11.09.html" class="pag_diferent"></a>
+        <a href="primer_11.10.html" class="pag_diferent"></a>
+        <a href="primer_11.11.html" class="pag_diferent"></a>
+        <a href="primer_11.12.html" class="pag_diferent"></a>
+        <a href="primer_11.13.html" class="pag_diferent"></a>
+        <a href="primer_11.15.html" class="pag_diferent"></a>
+        <a href="primer_11.17.html" class="pag_diferent"></a>
+        <a href="primer_11.18.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="primer_11.20.html" class="pag_diferent"></a>
+        <a href="primer_11.23.html" class="pag_diferent"></a>
+        <a href="primer_11.25.html" class="pag_diferent"></a>
+        <a href="primer_11.26.html" class="pag_diferent"></a>
+        <a href="primer_11.27.html" class="pag_diferent"></a>
+        <a href="primer_11.28.html" class="pag_diferent"></a>
+        <a href="primer_11.29.html" class="pag_diferent"></a>
+        <a href="primer_11.30.html" class="pag_diferent"></a>
+    </div>
+  <nav class="navbar2">
+        <div class="logo">1r de Batxillerat - Relacions Semàntiques</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>19. Indica l'hiperònim corresponent a cada grup de paraules:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li><span class="frase">cotxe, moto, autocar, autobús &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="postres">postres</option>
+                        <option value="accidents geogràfics">accidents geogràfics</option>
+                        <option value="accessoris per descansar">accessoris per descansar</option>
+                        <option value="flors">flors</option>
+                        <option value="material d'escriptura">material d'escriptura</option>
+                        <option value="vehicles">vehicles</option>
+                        <option value="vies de comunicació">vies de comunicació</option>
+                        <option value="mobiliari">mobiliari</option>
+                    </select>
+                </li>
+                <li><span class="frase">maduixes, arròs amb llet, iogurt, flam &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="postres">postres</option>
+                        <option value="accidents geogràfics">accidents geogràfics</option>
+                        <option value="accessoris per descansar">accessoris per descansar</option>
+                        <option value="flors">flors</option>
+                        <option value="material d'escriptura">material d'escriptura</option>
+                        <option value="vehicles">vehicles</option>
+                        <option value="vies de comunicació">vies de comunicació</option>
+                        <option value="mobiliari">mobiliari</option>
+                    </select>
+                </li>
+                <li><span class="frase">rosa, margarida, tulipa, clavell &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="postres">postres</option>
+                        <option value="accidents geogràfics">accidents geogràfics</option>
+                        <option value="accessoris per descansar">accessoris per descansar</option>
+                        <option value="flors">flors</option>
+                        <option value="material d'escriptura">material d'escriptura</option>
+                        <option value="vehicles">vehicles</option>
+                        <option value="vies de comunicació">vies de comunicació</option>
+                        <option value="mobiliari">mobiliari</option>
+                    </select>
+                </li>
+                <li><span class="frase">taula, cadira, armari, llit &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="postres">postres</option>
+                        <option value="accidents geogràfics">accidents geogràfics</option>
+                        <option value="accessoris per descansar">accessoris per descansar</option>
+                        <option value="flors">flors</option>
+                        <option value="material d'escriptura">material d'escriptura</option>
+                        <option value="vehicles">vehicles</option>
+                        <option value="vies de comunicació">vies de comunicació</option>
+                        <option value="mobiliari">mobiliari</option>
+                    </select>
+                </li>
+            </ol>
+
+                
+            <ol class="lista">
+                <li><span class="frase">llapis, ploma, bolígraf, retolador &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="postres">postres</option>
+                        <option value="accidents geogràfics">accidents geogràfics</option>
+                        <option value="accessoris per descansar">accessoris per descansar</option>
+                        <option value="flors">flors</option>
+                        <option value="material d'escriptura">material d'escriptura</option>
+                        <option value="vehicles">vehicles</option>
+                        <option value="vies de comunicació">vies de comunicació</option>
+                        <option value="mobiliari">mobiliari</option>
+                    </select>
+                </li>
+                <li><span class="frase">carretera, camí, autopista, autovia &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="postres">postres</option>
+                        <option value="accidents geogràfics">accidents geogràfics</option>
+                        <option value="accessoris per descansar">accessoris per descansar</option>
+                        <option value="flors">flors</option>
+                        <option value="material d'escriptura">material d'escriptura</option>
+                        <option value="vehicles">vehicles</option>
+                        <option value="vies de comunicació">vies de comunicació</option>
+                        <option value="mobiliari">mobiliari</option>
+                    </select>
+                </li>
+                <li><span class="frase">muntanya, vall, turó, cim &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="postres">postres</option>
+                        <option value="accidents geogràfics">accidents geogràfics</option>
+                        <option value="accessoris per descansar">accessoris per descansar</option>
+                        <option value="flors">flors</option>
+                        <option value="material d'escriptura">material d'escriptura</option>
+                        <option value="vehicles">vehicles</option>
+                        <option value="vies de comunicació">vies de comunicació</option>
+                        <option value="mobiliari">mobiliari</option>
+                    </select>
+                </li>
+                <li><span class="frase">matalàs, somier, llit, coixí &rarr;</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="postres">postres</option>
+                        <option value="accidents geogràfics">accidents geogràfics</option>
+                        <option value="accessoris per descansar">accessoris per descansar</option>
+                        <option value="flors">flors</option>
+                        <option value="material d'escriptura">material d'escriptura</option>
+                        <option value="vehicles">vehicles</option>
+                        <option value="vies de comunicació">vies de comunicació</option>
+                        <option value="mobiliari">mobiliari</option>
+                    </select>
+                </li>
+            </ol>
+        </div>
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+        </div>    
+    </div>
+    <script>
+    // Lista de respuestas correctas en orden
+    const respuestas = [
+        "vehicles", "postres", "flors", "mobiliari", "material d'escriptura",
+        "vies de comunicació", "accidents geogràfics", "accessoris per descansar"
+    ];
+    
+    const selects = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        selects.forEach((select, index) => {
+            if(select.value === respuestas[index]) {
+                select.style.background = "rgba(0,255,0,0.25)";
+                select.disabled = true;
+            } else {
+                select.style.background = "rgba(255,0,0,0.25)";
+                select.disabled = false;
+            }
+        });
+        botonReintentar.style.display = "inline-block";
+    }
+
+    function reintentar() {
+        selects.forEach(select => {
+            select.selectedIndex = 0;
+            select.style.background = "rgba(255,255,255,0.184)";
+            select.disabled = false;
+        });
+        botonReintentar.style.display = "none";
+    }
+ 
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+</script>    
+</body>
+</html>

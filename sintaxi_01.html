@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Reflexió Lingüística</title>
+
+  <style>
+    .tabla {
+        margin-top: 81px; 
+        margin-right: 21px; 
+        margin-bottom: 80px;
+        display: grid; 
+        grid-template-columns: 1fr; 
+        column-gap: 80px;
+        counter-reset: letra;
+        width: 1100px;
+    }
+
+    .lista {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .lista li {
+        counter-increment: letra;
+        margin-bottom: 18px;
+        font-size: 16px;
+        min-width: 500px;
+    }
+
+    .lista li::before {
+        content: counter(letra, lower-alpha) ") ";
+        width: 30px;
+    }
+
+    .opcions {
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        transition: background 0.2s;
+    }
+
+    .opcions label {
+        cursor: pointer;
+    }
+
+    .botones {
+        position: absolute; 
+        top: 930px; 
+        left: 200px; 
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        cursor: pointer;
+        margin-right: 30px;
+    }
+
+    .indice {
+        position: absolute;
+        top: 958px;
+        left: 768px;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+    }
+  </style>
+</head>
+<body>
+    <div class="indice">
+        <span class="pag_actual"></span>
+        <a href="sintaxi_02.html" class="pag_diferent"></a>
+        <a href="sintaxi_03.html" class="pag_diferent"></a>
+        <a href="sintaxi_04.html" class="pag_diferent"></a>
+    </div>
+
+    <nav class="navbar2">
+        <div class="logo">Reflexió Lingüística</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+    
+    <div class="hero2">
+        <div class="titol"><b>1. Indiqueu l'anàlisi correcta dels pronoms, les oracions o els sintagmes subratllats:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li><u>Hi havia cegs</u> que venien romanços, i unes dones espitregades oferien per dos xavos el retrat del general Mina [...].
+                    <div class="opcions" data-correct="c">
+                        <label><input type="radio" name="q1" value="a"> oració simple passiva pronominal o reflexa</label>
+                        <label><input type="radio" name="q1" value="b"> oració simple predicativa intransitiva</label>
+                        <label><input type="radio" name="q1" value="c"> oració simple impersonal</label>
+                        <label><input type="radio" name="q1" value="d"> oració simple predicativa transitiva</label>
+                    </div>
+                </li>
+
+                <li>Romangué un moment <u>entristit i pensarós</u>.
+                    <div class="opcions" data-correct="a">
+                        <label><input type="radio" name="q2" value="a"> complement predicatiu</label>
+                        <label><input type="radio" name="q2" value="b"> complement o objecte directe</label>
+                        <label><input type="radio" name="q2" value="c"> complement del nom</label>
+                        <label><input type="radio" name="q2" value="d"> complement circumstancial (o adjunt)</label>
+                    </div>
+                </li>
+
+                <li>El cel era <u>límpid i d'un blau transparent</u>.
+                    <div class="opcions" data-correct="a">
+                        <label><input type="radio" name="q3" value="a"> atribut</label>
+                        <label><input type="radio" name="q3" value="b"> complement d'adjectiu</label>
+                        <label><input type="radio" name="q3" value="c"> complement o objecte directe</label>
+                        <label><input type="radio" name="q3" value="d"> complement del nom</label>
+                    </div>
+                </li>
+
+                <li>Allí estigué aturat una estona contemplant les cases <u>que es derruïen</u> i les que, simultàniament, s'edificaven.
+                    <div class="opcions" data-correct="d">
+                        <label><input type="radio" name="q4" value="a"> oració subordinada substantiva de subjecte</label>
+                        <label><input type="radio" name="q4" value="b"> oració subordinada substantiva de complement o objecte directe</label>
+                        <label><input type="radio" name="q4" value="c"> oració subordinada substantiva de complement de règim (o preposicional)</label>
+                        <label><input type="radio" name="q4" value="d"> oració subordinada adjectiva o de relatiu de complement del nom</label>
+                    </div>
+                </li>
+
+                <li>Allà dalt, a Montjuïc, <u>hi</u> tremolava la bandera.
+                    <div class="opcions" data-correct="d">
+                        <label><input type="radio" name="q5" value="a"> complement predicatiu</label>
+                        <label><input type="radio" name="q5" value="b"> atribut</label>
+                        <label><input type="radio" name="q5" value="c"> complement o objecte directe</label>
+                        <label><input type="radio" name="q5" value="d"> complement circumstancial (o adjunt)</label>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+        </div>
+    </div>
+    
+    <script>
+    const preguntas = document.querySelectorAll(".opcions");
+    const botonCorregir = document.getElementById("boton-corregir");
+    const botonReintentar = document.getElementById("boton-reintentar");
+
+    function comprobarRespuestas() {
+        preguntas.forEach((p) => {
+            const correcta = p.dataset.correct;
+            const radios = p.querySelectorAll("input[type='radio']");
+            const seleccionada = p.querySelector("input[type='radio']:checked");
+            p.style.background = "";
+            if (!seleccionada) {
+                p.style.background = "rgba(255,0,0,0.25)";
+                return;
+            }
+            if (seleccionada.value === correcta) {
+                p.style.background = "rgba(0,255,0,0.25)";
+                radios.forEach(r => r.disabled = true);
+            } else {
+                p.style.background = "rgba(255,0,0,0.25)";
+            }
+        });
+        botonReintentar.style.display = "inline-block";
+    }
+
+    function reintentar() {
+        document.querySelectorAll("input[type='radio']").forEach(r => {
+            r.checked = false;
+            r.disabled = false;
+        });
+        document.querySelectorAll(".opcions").forEach(p => {
+            p.style.background = "rgba(255, 255, 255, 0.1)";
+        });
+        botonReintentar.style.display = "none";
+    }
+    botonCorregir.addEventListener("click", comprobarRespuestas);
+    botonReintentar.addEventListener("click", reintentar);
+    </script>
+
+</body>
+</html>

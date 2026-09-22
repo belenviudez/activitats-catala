@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>1r de Batxillerat - Les Funcions Sintàctiques</title>
+
+  <style>
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .tabla {
+        position: absolute; 
+        top: 180px; 
+        left: 200px;
+        display: grid; 
+        grid-template-columns: 500px  550px; 
+        column-gap: 50px;
+        max-width: 1000px;
+        counter-reset: letra;
+    }
+    .lista {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .lista li {
+        counter-increment: letra;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .lista li::before {
+        content: counter(letra, lower-alpha) ") ";
+        width: 30px;
+    }
+    .lista span.frase {
+        display: inline;
+    }
+
+    .lista select.respuesta {
+        background-color: rgba(255, 255, 255, 0.184);
+        font-size: 16px;
+        width: max-content;
+        flex: 1;
+        min-width: 0px;
+        border: none;
+        border-bottom: 2px solid black;
+        outline: none;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .botones {
+        position: absolute; 
+        top: 325px; 
+        left: 200px; 
+        align-items: left;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="primer_8.01.html" class="pag_diferent"></a>
+        <a href="primer_8.04.html" class="pag_diferent"></a>
+        <a href="primer_8.05.html" class="pag_diferent"></a>
+        <a href="primer_8.06.html" class="pag_diferent"></a>
+        <a href="primer_8.07.html" class="pag_diferent"></a>
+        <a href="primer_8.08.html" class="pag_diferent"></a>
+        <a href="primer_8.09.html" class="pag_diferent"></a>
+        <a href="primer_8.10.html" class="pag_diferent"></a>
+        <a href="primer_8.11.html" class="pag_diferent"></a>
+        <a href="primer_8.12.html" class="pag_diferent"></a>
+        <a href="primer_8.13.html" class="pag_diferent"></a>
+        <a href="primer_8.14.html" class="pag_diferent"></a>
+        <a href="primer_8.15.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="primer_8.17.html" class="pag_diferent"></a>
+        <a href="primer_8.18.html" class="pag_diferent"></a>
+        <a href="primer_8.19.html" class="pag_diferent"></a>
+        <a href="primer_8.20.html" class="pag_diferent"></a>
+        <a href="primer_8.21.html" class="pag_diferent"></a>
+        <a href="primer_8.24.html" class="pag_diferent"></a>
+    </div>
+  <nav class="navbar2">
+        <div class="logo">1r de Batxillerat - Les Funcions Sintàctiques</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>16. Completa les oracions següents amb un atribut que presenti l'estructura que hi ha entre parèntesis:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li><span class="frase">En Berenguer és (<b>SAdj</b>)</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="pacient">pacient</option>
+                        <option value="una persona pacient">una persona pacient</option>
+                    </select><span>.</span>
+                </li>
+
+                <li><span class="frase">La Marcel·la era (<b>SN definit</b>) </span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="una noia molt capaç">una noia molt capaç</option>
+                        <option value="la noia que seia allà">la noia que seia allà</option>
+                    </select><span>.</span>
+                </li>
+
+                <li><span class="frase">El Priorat és (<b>SN indefinit</b>) </span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="la comarca on viu la Carla">la comarca on viu la Carla</option>
+                        <option value="una comarca catalana">una comarca catalana</option>
+                    </select><span>.</span>
+                </li> 
+                
+                <li><span class="frase">L'edifici estava (<b>SPrep</b>) </span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="en obres">en obres</option>
+                        <option value="ple de plantes als balcons">ple de plantes als balcons</option>
+                    </select><span>.</span>
+                </li>
+            </ol>
+            <ol class="lista">
+                <li><span class="frase">La moneda era (<b>SPrep</b>)</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="de la noia d'abans">de la noia d'abans</option>
+                        <option value="molt valuosa en aquella època">molt valuosa en aquella època</option>
+                    </select><span>.</span>
+                </li>
+                
+                <li><span class="frase">L'economia està (<b>SAdv</b>)</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="infravalorada en alguns països">infravalorada en alguns països</option>
+                        <option value="sorprenentment bé en determinats països">sorprenentment bé en determinats països</option>
+                    </select><span>.</span>
+                </li>
+                    
+                <li><span class="frase">Això no és (<b>oració subordinada</b>)</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="el que havíem acordat">el que havíem acordat</option>
+                        <option value="l'acord de la reunió">l'acord de la reunió</option>
+                    </select><span>.</span>
+                </li>
+                    
+                <li><span class="frase">La Martina és (<b>oració subordinada</b>)</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="la noia que ho coneix">la noia que ho coneix</option>
+                        <option value="qui coneix el secret">qui coneix el secret</option>
+                    </select><span>.</span>
+                </li>
+            </ol>
+        </div>
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+        </div>    
+    </div>
+    <script>
+    // Lista de respuestas correctas en orden
+    const respuestas = [
+  "pacient", "la noia que seia allà","una comarca catalana","en obres","de la noia d'abans","sorprenentment bé en determinats països","el que havíem acordat","qui coneix el secret"
+];
+    
+    const selects = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        selects.forEach((select, index) => {
+            if(select.value === respuestas[index]) {
+                select.style.background = "rgba(0,255,0,0.25)";
+                select.disabled = true;
+            } else {
+                select.style.background = "rgba(255,0,0,0.25)";
+                select.disabled = false;
+            }
+        });
+        botonReintentar.style.display = "inline-block";
+    }
+
+    function reintentar() {
+        selects.forEach(select => {
+            select.selectedIndex = 0;
+            select.style.background = "rgba(255,255,255,0.184)";
+            select.disabled = false;
+        });
+        botonReintentar.style.display = "none";
+    }
+ 
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+</script>    
+</body>
+</html>

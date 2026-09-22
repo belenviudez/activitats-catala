@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>1r de Batxillerat - L'Adverbi</title>
+
+    <style>
+        html, body {
+            overflow-x: hidden;
+        }
+
+        body {
+            margin: 0;
+            position: relative;
+        }
+
+        .tabla{
+            position:absolute;
+            top:260px;
+            left:198px;
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap:20px;
+            width:75%;
+        }
+
+        .columna{
+            background: rgba(255,255,255,0.2);
+            border-radius:10px;
+            padding:10px;
+            min-height:350px;
+        }
+
+        .columna h3{
+            text-align:center;
+            margin-bottom:8px;
+        }
+
+        .dropzone{
+            height: 300px;
+            padding: 5px;
+            border: 2px dashed rgba(0,0,0,0.3);
+            border-radius: 10px;
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+        }
+
+        .palabras{
+            position:absolute;
+            top:180px;
+            left:200px;
+            width:75%;
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px;
+            line-height: 1;
+        }
+
+        .palabra{
+            padding: 6px 13px;
+            background:#fba74e84;
+            border-radius: 30px;
+            cursor:grab;
+            transition:0.2s;
+            user-select:none;
+        }
+
+        .palabra:hover{
+            transform:translateY(-3px);
+            box-shadow:0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .botones {
+            position: absolute;
+            top: 620px;
+            left: 200px;   
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            justify-content: flex-start;
+            align-self: flex-start;
+        }
+
+        .botones button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            background: #fba74e84;
+            color: #000000;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-right: 30px;
+        }
+
+        .botones button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .indice {
+            position: fixed;
+            bottom: 5%;
+            left: 50%;
+            display: flex;
+            transform: translateX(-50%);
+            gap: 12px;
+        }
+
+        .pag_diferent {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #fba74eb2;
+            display: inline-block;
+            transition: 0.2s;
+        }
+
+        .pag_diferent:hover {
+            background-color: #fba74e;
+            transform: scale(1.15);
+        }
+
+        .pag_actual {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #e98315;
+            cursor: default;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="primer_7.01.html" class="pag_diferent"></a>
+        <a href="primer_7.02.html" class="pag_diferent"></a>
+        <a href="primer_7.03.html" class="pag_diferent"></a>
+        <a href="primer_7.04.html" class="pag_diferent"></a>
+        <a href="primer_7.05.html" class="pag_diferent"></a>
+        <a href="primer_7.06.html" class="pag_diferent"></a>
+        <a href="primer_7.07.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="primer_7.12.html" class="pag_diferent"></a>
+        <a href="primer_7.13.html" class="pag_diferent"></a>
+        <a href="primer_7.15.html" class="pag_diferent"></a>
+        <a href="primer_7.18.html" class="pag_diferent"></a>
+    </div>
+    <nav class="navbar2">
+        <div class="logo">1r de Batxillerat - L'Adverbi</div>
+
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+
+    <div class="titol"><b>10. Classifica les locucions adverbials següents a la taula de sota:</b></div>
+
+    <div class="tabla">
+        <div class="columna">
+            <h3>Irreflexivament</h3>
+            <div class="dropzone" data-categoria="irreflexivament"></div>
+        </div>
+        <div class="columna">
+            <h3>Abundantment</h3>
+            <div class="dropzone" data-categoria="abundantment"></div>
+        </div>
+        <div class="columna">
+            <h3>Sobtadament</h3>
+            <div class="dropzone" data-categoria="sobtadament"></div>
+        </div>
+        <div class="columna">
+            <h3>Manera de mirar</h3>
+            <div class="dropzone" data-categoria="manera de mirar"></div>
+        </div>
+    </div>
+
+    <div class="palabras" id="contenedor-palabras">
+        <div class="palabra" draggable="true" data-categoria="abundantment">a betzef</div>
+        <div class="palabra" draggable="true" data-categoria="abundantment">a balquena</div>
+        <div class="palabra" draggable="true" data-categoria="irreflexivament">a cop calent</div>
+        <div class="palabra" draggable="true" data-categoria="manera de mirar">a ull</div>
+        <div class="palabra" draggable="true" data-categoria="abundantment">a dojo</div>
+        <div class="palabra" draggable="true" data-categoria="irreflexivament">a la babalà</div>
+        <div class="palabra" draggable="true" data-categoria="abundantment">a manta</div>
+        <div class="palabra" draggable="true" data-categoria="irreflexivament">a rajaploma</div>
+        <div class="palabra" draggable="true" data-categoria="abundantment">a tort i a dret</div>
+        <div class="palabra" draggable="true" data-categoria="sobtadament">de bursada</div>
+        <div class="palabra" draggable="true" data-categoria="manera de mirar">de cap a peus</div>
+        <div class="palabra" draggable="true" data-categoria="sobtadament">de cop i volta</div>
+        <div class="palabra" draggable="true" data-categoria="manera de mirar">de fit a fit</div>
+        <div class="palabra" draggable="true" data-categoria="sobtadament">de sobte</div>
+        <div class="palabra" draggable="true" data-categoria="sobtadament">sense solta ni volta</div>
+    </div>
+
+    <div class="botones">
+        <button id="boton-corregir">Corregir</button>
+        <button id="boton-reintentar" style="display:none;">
+            Reintentar
+        </button>
+    </div>
+
+</div>
+
+<script>
+
+    const palabras = document.querySelectorAll('.palabra');
+    const zonas = document.querySelectorAll('.dropzone');
+
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    let palabraArrastrada = null;
+
+    palabras.forEach(palabra => {
+        palabra.addEventListener('dragstart', () => {
+            palabraArrastrada = palabra;
+        });
+    });
+
+    zonas.forEach(zona => {
+        zona.addEventListener('dragover', e => {
+            e.preventDefault();
+        });
+        zona.addEventListener('drop', () => {
+            if(palabraArrastrada){
+                zona.appendChild(palabraArrastrada);
+            }
+        });
+    });
+
+    function comprobarRespuestas() {
+        zonas.forEach(zona => {
+            const categoriaCorrecta = zona.dataset.categoria;
+            const palabrasDentro = zona.querySelectorAll('.palabra');
+
+            palabrasDentro.forEach(palabra => {
+                if (palabra.dataset.categoria === categoriaCorrecta) {
+                    palabra.style.background = "rgba(0,255,0,0.25)";
+                    palabra.setAttribute("draggable", "false");
+                    palabra.style.cursor = "default";
+                } else {
+                    palabra.style.background = "rgba(255,0,0,0.25)";
+                }
+            });
+        });
+
+        botonReintentar.style.display = "inline-block";
+    };
+
+    function reintentar() {
+        const contenedor = document.getElementById('contenedor-palabras');
+        document.querySelectorAll('.palabra').forEach(palabra => {
+            contenedor.appendChild(palabra);
+            palabra.classList.remove('correcto', 'incorrecto');
+            palabra.setAttribute("draggable", "true");
+            palabra.style.cursor = "grab";
+            palabra.style.background = "#fba74e84";
+        });
+        botonReintentar.style.display = "none";
+    }
+    
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+
+</script>
+
+</body>
+</html>
