@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>1r de Batxillerat - La Preposició</title>
+
+  <style>
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .tabla {
+        position: absolute; 
+        top: 180px; 
+        left: 200px;
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        column-gap: 50px;
+        width: 900px;
+        counter-reset: letra;
+    }
+    .lista {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .lista li {
+        counter-increment: letra;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+        width: max-content;
+    }
+
+    .lista li::before {
+        content: counter(letra, lower-alpha) ") ";
+        width: 30px;
+    }
+    .lista span.frase {
+        display: inline;
+    }
+
+    .lista select.respuesta {
+        background-color: rgba(255, 255, 255, 0.184);
+        font-size: 16px;
+        width: 120px;
+        border: none;
+        border-bottom: 2px solid black;
+        outline: none;
+        margin: 0 5px;
+    }
+
+    .botones {
+        position: absolute; 
+        top: 395px; 
+        left: 200px; 
+        align-items: left;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="primer_6.01.html" class="pag_diferent"></a>
+        <a href="primer_6.02.html" class="pag_diferent"></a>
+        <a href="primer_6.03.html" class="pag_diferent"></a>
+        <a href="primer_6.04.html" class="pag_diferent"></a>
+        <a href="primer_6.05.html" class="pag_diferent"></a>
+        <a href="primer_6.06.html" class="pag_diferent"></a>
+        <a href="primer_6.07.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="primer_6.09.html" class="pag_diferent"></a>
+    </div>
+  <nav class="navbar2">
+        <div class="logo">1r de Batxillerat - La Preposició</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>8. Completa les oracions següents amb la forma adequada en cada cas:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li><span class="frase">Al Canigó van arribar a deu graus</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="baix">baix</option>
+                        <option value="sota">sota</option>
+                    </select><span>zero.</span>
+                </li>
+                <li>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="en quant a">En quant a</option>
+                        <option value="quant a">Quant a</option>
+                    </select><span>la feina, no hi ha cap novetat.</span>
+                </li>
+                <li>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="arrel de">Arrel de</option>
+                        <option value="arran de">Arran de</option>
+                    </select><span>la crisi borsària, van fer fallida dos bancs.</span>
+                </li>
+                <li>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="en relació a">En relació a</option>
+                        <option value="en relació amb">En relació amb</option>
+                    </select><span>el teu dubte, encara no me l'he pogut mirar.</span>
+                </li>
+                <li><span class="frase">Va rebre el consentiment per</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="medi">medi</option>
+                        <option value="mitjà">mitjà</option>
+                    </select><span>d'una carta escrita.</span>
+                </li>
+                <li><span class="frase">Es pensa que,</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="a base de">a base de</option>
+                        <option value="a còpia de">a còpia de</option>
+                    </select><span>diners, s'aconsegueix tot.</span>
+                </li>
+            </ol>
+
+            <ol class="lista">
+                <li>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="a nivell dels">A nivell dels</option>
+                        <option value="pel que fa als">Pel que fa als</option>
+                    </select><span>resultats, el centre presenta unes xifres positives.</span>
+                </li>
+                <li><span class="frase">Els motors</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="a">a</option>
+                        <option value="de">de</option>
+                    </select><span>reacció van suposar una revolució per a l'aviació.</span>
+                </li>
+                <li><span class="frase"><i>La bogeria</i> es representarà al teatre</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="baix">baix</option>
+                        <option value="sota">sota</option>
+                    </select><span>direcció de Pep Cerdà.</span>
+                </li>
+                <li><span class="frase">Cal rendir-se</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="front">front</option>
+                        <option value="davant">davant</option>
+                    </select><span>els atacs rebuts.</span>
+                </li>
+                <li><span class="frase">Viu</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="aprop">aprop</option>
+                        <option value="a prop">a prop</option>
+                    </select><span>de l'institut.</span>
+                </li>
+            </ol>
+        </div>
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+        </div>    
+    </div>
+    <script>
+    // Lista de respuestas correctas en orden
+    const respuestas = [
+  "sota","quant a","arran de","en relació amb","mitjà","a còpia de", "pel que fa als", "de", "sota", "davant", "a prop"
+];
+    
+    const selects = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        selects.forEach((select, index) => {
+            if(select.value === respuestas[index]) {
+                select.style.background = "rgba(0,255,0,0.25)";
+                select.disabled = true;
+            } else {
+                select.style.background = "rgba(255,0,0,0.25)";
+                select.disabled = false;
+            }
+        });
+        botonReintentar.style.display = "inline-block";
+    }
+
+    function reintentar() {
+        selects.forEach(select => {
+            select.selectedIndex = 0;
+            select.style.background = "rgba(255,255,255,0.184)";
+            select.disabled = false;
+        });
+        botonReintentar.style.display = "none";
+    }
+ 
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+</script>    
+</body>
+</html>

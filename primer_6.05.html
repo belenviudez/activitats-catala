@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>1r de Batxillerat - La Preposició</title>
+
+  <style>
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .tabla {
+        position: absolute; 
+        top: 180px; 
+        left: 200px;
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        column-gap: 50px;
+        width: 900px;
+        counter-reset: letra;
+    }
+    .lista {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .lista li {
+        counter-increment: letra;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+        width: max-content;
+    }
+
+    .lista li::before {
+        content: counter(letra, lower-alpha) ") ";
+        width: 30px;
+    }
+    .lista span.frase {
+        display: inline;
+    }
+
+    .lista select.respuesta {
+        background-color: rgba(255, 255, 255, 0.184);
+        font-size: 16px;
+        width: 60px;
+        border: none;
+        border-bottom: 2px solid black;
+        outline: none;
+        margin: 0 5px;
+    }
+
+    .botones {
+        position: absolute; 
+        top: 430px; 
+        left: 200px; 
+        align-items: left;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="primer_6.01.html" class="pag_diferent"></a>
+        <a href="primer_6.02.html" class="pag_diferent"></a>
+        <a href="primer_6.03.html" class="pag_diferent"></a>
+        <a href="primer_6.04.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="primer_6.06.html" class="pag_diferent"></a>
+        <a href="primer_6.07.html" class="pag_diferent"></a>
+        <a href="primer_6.08.html" class="pag_diferent"></a>
+        <a href="primer_6.09.html" class="pag_diferent"></a>
+    </div>
+  <nav class="navbar2">
+        <div class="logo">1r de Batxillerat - La Preposició</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>5. Escriu la preposició adequada en cada cas:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li><span class="frase">No fa cas</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="a">a</option>
+                        <option value="de">de</option>
+                    </select><span>ningú.</span>
+                </li>
+                <li><span class="frase">Què faràs demà<span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="per">per</option>
+                        <option value="a">a</option>
+                    </select><span>el vespre?</span>
+                </li>
+                <li><span class="frase">No tinc res<span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="que">que</option>
+                        <option value="a">a</option>
+                    </select><span>dir-te.</span>
+                </li>
+                <li><span class="frase">Aquest pis fa pudor<span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="a">a</option>
+                        <option value="de">de</option>
+                    </select><span>el vespre?</span>
+                </li>
+                <li><span class="frase">Mai no he confiat<span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="amb">amb</option>
+                        <option value="en">en</option>
+                    </select><span>tu.</span>
+                </li>
+                <li><span class="frase">Ves<span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="en">en</option>
+                        <option value="amb">amb</option>
+                    </select><span>compte amb el que fas.</span>
+                </li>
+                <li><span class="frase">Volem fer esment<span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="de">de</option>
+                        <option value="a">a</option>
+                    </select><span>la greu situació que viu la comarca.</span>
+                </li>
+            </ol>
+
+            <ol class="lista">
+                <li><span class="frase">Tingues</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="en">en</option>
+                        <option value="amb">amb</option>
+                    </select><span>compte que fa temps que ens coneixem.</span>
+                </li>
+                <li><span class="frase">M'estimo més viatjar<span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="amb">amb</option>
+                        <option value="en">en</option>
+                    </select><span>tren que no pas</span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="amb">amb</option>
+                        <option value="en">en</option>
+                    </select><span>avió.</span>
+                </li>
+                <li><span class="frase">Escriu les novel·les<span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="amb">amb</option>
+                        <option value="en">en</option>
+                    </select><span>ploma.</span>
+                </li>
+                <li><span class="frase">Ho enllestiré<span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="amb">amb</option>
+                        <option value="en">en</option>
+                    </select><span>pocs segons.</span>
+                </li>
+                <li><span class="frase">Avui<span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="per">per</option>
+                        <option value="a">a</option>
+                    </select><span>la tarda sortiré a comprar.</span>
+                </li>
+                <li><span class="frase">S'ha entossudit<span>
+                    <select class="respuesta">
+                        <option value=""></option>
+                        <option value="amb">amb</option>
+                        <option value="en">en</option>
+                    </select><span>una proposta que no té ni cap ni peus.</span>
+                </li>
+            </ol>
+        </div>
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+        </div>    
+    </div>
+    <script>
+    // Lista de respuestas correctas en orden
+    const respuestas = [
+  "a","a","a","de","en","amb", "de", "en", "en", "en", "amb", "en", "a", "amb"
+];
+    
+    const selects = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        selects.forEach((select, index) => {
+            if(select.value === respuestas[index]) {
+                select.style.background = "rgba(0,255,0,0.25)";
+                select.disabled = true;
+            } else {
+                select.style.background = "rgba(255,0,0,0.25)";
+                select.disabled = false;
+            }
+        });
+        botonReintentar.style.display = "inline-block";
+    }
+
+    function reintentar() {
+        selects.forEach(select => {
+            select.selectedIndex = 0;
+            select.style.background = "rgba(255,255,255,0.184)";
+            select.disabled = false;
+        });
+        botonReintentar.style.display = "none";
+    }
+ 
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+</script>    
+</body>
+</html>

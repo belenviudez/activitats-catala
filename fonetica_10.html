@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Fonètica</title>
+
+  <style>
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .tabla {
+        position: absolute; 
+        top: 180px; 
+        left: 200px; 
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        column-gap: 80px;
+        counter-reset: letra;
+    }
+    .lista {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .lista li {
+        counter-increment: letra;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+
+    .lista li::before {
+        content: counter(letra, lower-alpha) ") ";
+        width: 30px;
+    }
+    .lista li span {
+        width: 100px;
+        margin-right: 5px;
+    }
+
+    .lista input {
+        flex: 1;
+        border: none;
+        border-bottom: 2px solid black;
+        background-color: rgba(255, 255, 255, 0.184);
+        outline: none;
+        width: 20px;
+        font-size: 16px;
+    }
+
+    .botones {
+        position: absolute; 
+        top: 325px; 
+        left: 200px; 
+        align-items: left;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="fonetica_01.html" class="pag_diferent"></a>
+        <a href="fonetica_02.html" class="pag_diferent"></a>
+        <a href="fonetica_03.html" class="pag_diferent"></a>
+        <a href="fonetica_04.html" class="pag_diferent"></a>
+        <a href="fonetica_05.html" class="pag_diferent"></a>
+        <a href="fonetica_06.html" class="pag_diferent"></a>
+        <a href="fonetica_07.html" class="pag_diferent"></a>
+        <a href="fonetica_08.html" class="pag_diferent"></a>
+        <a href="fonetica_09.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="fonetica_11.html" class="pag_diferent"></a>
+        <a href="fonetica_12.html" class="pag_diferent"></a>
+        <a href="fonetica_13.html" class="pag_diferent"></a>
+        <a href="fonetica_14.html" class="pag_diferent"></a>
+        <a href="fonetica_15.html" class="pag_diferent"></a>
+        <a href="fonetica_16.html" class="pag_diferent"></a>
+        <a href="fonetica_17.html" class="pag_diferent"></a>
+        <a href="fonetica_18.html" class="pag_diferent"></a>
+        <a href="fonetica_19.html" class="pag_diferent"></a>
+        <a href="fonetica_20.html" class="pag_diferent"></a>
+        <a href="fonetica_21.html" class="pag_diferent"></a>
+    </div>
+    <nav class="navbar2">
+        <div class="logo">Fonètica</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>10. Escriu els símbols [s], [z] o deixa la casella buida segons el so de les grafies en negreta:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li><span>nu<b>s</b> estret &rarr; [<input type="text" class="respuesta">]</span></li>
+                <li><span>no e<b>s</b> mulla &rarr; [<input type="text" class="respuesta">]</span></li>
+                <li><span>quin<b>s</b> rínxols &rarr; [<input type="text" class="respuesta">]</span></li>
+                <li><span>temp<b>s</b> joves &rarr; [<input type="text" class="respuesta">]</span></li>
+            </ol>
+
+            <ol class="lista">
+                <li><span>de<b>s</b> d'ara &rarr; [<input type="text" class="respuesta">]</span></li>
+                <li><span>mé<b>s</b> amunt &rarr; [<input type="text" class="respuesta">]</span></li>
+                <li><span>arrò<b>s</b> amb conill &rarr; [<input type="text" class="respuesta">]</span></li>
+                <li><span>bar<b>s</b> xinesos &rarr; [<input type="text" class="respuesta">]</span></li>
+            </ol>
+
+             <ol class="lista">
+                <li><span>un<b>s</b> feixos &rarr; [<input type="text" class="respuesta">]</span></li>
+                <li><span>passaport<b>s</b> autoritzats &rarr; [<input type="text" class="respuesta">]</span></li>
+                <li><span>do<b>s</b> dies &rarr; [<input type="text" class="respuesta">]</span></li>
+                <li><span>mé<b>s</b> tard &rarr; [<input type="text" class="respuesta">]</span></li>
+            </ol>
+        </div>
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+        </div>    
+    </div>
+    <script>
+    // Lista de respuestas correctas en orden
+    const respuestas = [
+        ["z"], ["z"], [""], [""], ["z"],
+        ["z"], ["z"], [""], ["s"], ["z"], 
+        ["z"], ["s"]
+    ];
+    
+    const inputs = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        inputs.forEach((input, index) => {
+            const valor = input.value.trim().toLowerCase();
+            const opcionesCorrectas = respuestas[index].map(r => r.toLowerCase());
+            if (opcionesCorrectas.includes(valor)) {
+                input.style.background = "rgba(0, 255, 0, 0.25)";
+                input.disabled = true;
+            } else {
+                input.style.background = "rgba(255, 0, 0, 0.25)";
+                input.disabled = false;
+            }
+        });
+        botonReintentar.style.display = "inline-block";
+    }
+
+    function reintentar() {
+        inputs.forEach(input => {
+            input.value = "";
+            input.style.background = "rgba(255, 255, 255, 0.184)"; // estado inicial
+            input.disabled = false; // desbloqueamos todos
+        });
+        botonReintentar.style.display = "none"; // ocultamos reintentar
+    }
+ 
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+</script>    
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>1r de Batxillerat - La Preposició</title>
+
+  <style>
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .tabla {
+        margin-top: 80px;
+        margin-right: 35px;
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        column-gap: 40px;
+        counter-reset: letra;
+    }
+    .lista {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .lista li {
+        counter-increment: letra;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+
+    .lista li::before {
+        content: counter(letra, lower-alpha) ") ";
+        width: 30px;
+    }
+
+
+    .lista li span {
+        width: max-content;
+    }
+
+    .lista input {
+        border: none;
+        border-bottom: 2px solid black;
+        background-color: rgba(255, 255, 255, 0.184);
+        outline: none;
+        width: 60px;
+        font-size: 16px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .botones {
+        position: absolute;
+        display: flex;
+        gap: 20px;
+        top: 430px;
+        left: 200px;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .indice {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+        z-index: 10;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="primer_6.01.html" class="pag_diferent"></a>
+        <a href="primer_6.02.html" class="pag_diferent"></a>
+        <a href="primer_6.03.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="primer_6.05.html" class="pag_diferent"></a>
+        <a href="primer_6.06.html" class="pag_diferent"></a>
+        <a href="primer_6.07.html" class="pag_diferent"></a>
+        <a href="primer_6.08.html" class="pag_diferent"></a>
+        <a href="primer_6.09.html" class="pag_diferent"></a>
+    </div>
+  <nav class="navbar2">
+        <div class="logo">1r de Batxillerat - La Preposició</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>4. Completa els oracions amb "a”, quan calgui, no cal fer les contraccions corresponents. Si no cal, deixa l'espai buit:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li><span>Vaig saludar</span> <input type="text" class="respuesta"> <span>la Carlota a la festa.</span></li>
+                <li><span>La situació del país preocupa</span> <input type="text" class="respuesta"> <span>les autoritats.</span></li>
+                <li><span>Van detenir</span> <input type="text" class="respuesta"> <span>el responsable de les finances de l'associació.</span></li>
+                <li><span>Durant el partit, l'entrenador va substituir</span> <input type="text" class="respuesta"> <span>el davanter centre.</span></li>
+                <li><span>Aconsello</span> <input type="text" class="respuesta"> <span>en Tomàs que plegui de la feina.</span></li>
+                <li><span>Fa mols anys que conec</span> <input type="text" class="respuesta"> <span>la Mercè.</span></li>
+                <li><span>Sempre que puc convido</span> <input type="text" class="respuesta"> <span>els companys a sopar.</span></li>
+            </ol>
+
+            <ol class="lista">
+                <li><span>He vist</span> <input type="text" class="respuesta"> <span>la veïna de davant que sortia amb el seu fill.</span></li>
+                <li><span>He escrit moltes cartes</span> <input type="text" class="respuesta"> <span>els amics.</span></li>
+                <li><span>Marc, crida</span> <input type="text" class="respuesta"> <span>les nenes, que ja fem tard.</span></li>
+                <li><span>El professor ajuda</span> <input type="text" class="respuesta"> <span>els alumnes a resoldre l'equació.</span></li>
+                <li><span>El representant del Parlament va rebre</span> <input type="text" class="respuesta"> <span>els ambaixadors.</span></li>
+                <li><span>Veig</span> <input type="text" class="respuesta"> <span>en Pere gairabé cada dia.</span></li>
+                <li><span>Ahir a la tarda vaig trobar</span> <input type="text" class="respuesta"> <span>la Maria.</span></li>
+            </ol>
+        </div>
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+        </div>    
+    </div>
+    <script>
+    // Lista de respuestas correctas en orden
+    const respuestas = [
+        [""], 
+        [""], 
+        [""], 
+        [""], 
+        ["a"], 
+        [""], 
+        [""], 
+        [""],
+        ["a"],
+        [""],
+        [""],
+        [""],
+        [""],
+        [""]
+    ];
+    
+    const inputs = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        inputs.forEach((input, index) => {
+            if (!respuestas[index]) return; // evita errores
+            const valor = input.value.trim().toLowerCase();
+            const opcionesCorrectas = respuestas[index].map(r => r.toLowerCase());
+            const esCorrecto =
+                (valor === "" && opcionesCorrectas.includes("")) ||
+                opcionesCorrectas.includes(valor);
+            if (esCorrecto) {
+                input.style.background = "rgba(0, 255, 0, 0.25)";
+                input.disabled = true;
+            } else {
+                input.style.background = "rgba(255, 0, 0, 0.25)";
+                input.disabled = false;
+            }
+        });
+    botonReintentar.style.display = "inline-block";
+    }
+    /*function comprobarRespuestas() {
+        inputs.forEach((input, index) => {
+            const valor = input.value.trim().toLowerCase();
+            const opcionesCorrectas = respuestas[index].map(r => r.toLowerCase());
+            if (opcionesCorrectas.includes(valor)) {
+                input.style.background = "rgba(0, 255, 0, 0.25)";
+                input.disabled = true;
+            } else {
+                input.style.background = "rgba(255, 0, 0, 0.25)";
+                input.disabled = false;
+            }
+        });
+    botonReintentar.style.display = "inline-block";
+    }*/
+
+    function reintentar() {
+        inputs.forEach(input => {
+            input.value = "";
+            input.style.background = "rgba(255, 255, 255, 0.184)"; // estado inicial
+            input.disabled = false; // desbloqueamos todos
+        });
+        botonReintentar.style.display = "none"; // ocultamos reintentar
+    }
+ 
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+</script>    
+</body>
+</html>

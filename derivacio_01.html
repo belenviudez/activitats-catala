@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Derivació</title>
+  <style>
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .tabla {
+        position: absolute; 
+        top: 180px; 
+        left: 200px; 
+        display: grid; 
+        grid-template-columns: 1fr; 
+        column-gap: 80px;
+        counter-reset: letra;
+    }
+
+    .lista {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .lista li {
+        counter-increment: letra;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+        min-width: 400px
+    }
+
+    .lista li::before {
+        content: counter(letra, lower-alpha) ") ";
+        width: 30px;
+    }
+    .lista li span {
+        width: fit-content;
+        margin-right: 0px;
+    }
+
+    .lista input {
+        border: none;
+        border-bottom: 2px solid black;
+        background-color: rgba(255, 255, 255, 0.184);
+        outline: none;
+        width: 120px;
+        font-size: 16px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .botones {
+        position: absolute; 
+        top: 465px; 
+        left: 200px; 
+        align-items: left;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50.5%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+        z-index: 10;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="indice">
+        <span class="pag_actual"></span>
+        <a href="derivacio_02.html" class="pag_diferent"></a>
+        <a href="derivacio_03.html" class="pag_diferent"></a>
+        <a href="derivacio_04.html" class="pag_diferent"></a>
+        <a href="derivacio_05.html" class="pag_diferent"></a>
+        <a href="derivacio_06.html" class="pag_diferent"></a>
+    </div>
+  <nav class="navbar2">
+        <div class="logo">Derivació</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>1. Completa les oracions següents amb el verb, el substantiu o l'adjectiu adequat:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li><span>Quina escena més incòmoda... En Josep va</span> <input type="text" class="respuesta"><span>aquell desconegut davant de tohom. Ningú no sabia que fer. <i>(bufetada)</i></span></li>
+                <li><span>Al llarg d'aquell període no hi va haver problema de</span> <input type="text" class="respuesta"> <span>de productes bàsics. <i>(subministrar)</i></span></li>
+                <li><span>Quan vam veure els lladres, ens vam</span> <input type="text" class="respuesta"><span>. <i>(covard)</i></span></li>
+                <li><span>No et perdis les ciutats</span> <input type="text" class="respuesta"><span>si vas a la Baviera alemanya. <i>(muralla)</i></span></li>
+                <li><span>Els crits de les grades eren tan</span> <input type="text" class="respuesta"><span>que l'equip local va remuntar i va aconseguir el triomf. <i>(coratge)</i></span></li>
+                <li><span>Nois, no sigueu</span> <input type="text" class="respuesta"><span>, que només són quatre abelles. <i>(por)</i></span></li>
+                <li><span>En Blai ha aconseguit superar la seva</span> <input type="text" class="respuesta"><span>i ara corre curses de muntanya. <i>(coix)</i></span></li>
+                <li><span>Si fas servir un drap de cotó, aconseguiràs que les copes de vidre recuperin la seva</span> <input type="text" class="respuesta"><span>. <i>(brillar)</i></span></li>
+            </ol>
+        </div>
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+        </div>    
+    </div>
+    <script>
+    // Lista de respuestas correctas en orden
+    const respuestas = [
+        ["bufetejar"], 
+        ["subministrament"], 
+        ["acovardir"], 
+        ["emmurallades"], 
+        ["encoratjadors"],
+        ["porucs"],
+        ["coixesa"],
+        ["brillantor"]
+    ];
+    
+    const inputs = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        inputs.forEach((input, index) => {
+            const valor = input.value.trim().toLowerCase().replace(/\.$/, '');
+            const opcionesCorrectas = respuestas[index].map(r => r.toLowerCase());
+            if (opcionesCorrectas.includes(valor)) {
+                input.style.background = "rgba(0, 255, 0, 0.25)";
+                input.disabled = true;
+            } else {
+                input.style.background = "rgba(255, 0, 0, 0.25)";
+                input.disabled = false;
+            }
+        });
+        botonReintentar.style.display = "inline-block";
+    }
+
+    function reintentar() {
+        inputs.forEach(input => {
+            input.value = "";
+            input.style.background = "rgba(255, 255, 255, 0.184)"; // estado inicial
+            input.disabled = false; // desbloqueamos todos
+        });
+        botonReintentar.style.display = "none"; // ocultamos reintentar
+    }
+ 
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+    </script>    
+</body>
+</html>

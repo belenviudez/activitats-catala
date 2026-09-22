@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>1r de Batxillerat - L'Adjectiu</title>
+    <style>
+    html, body {
+        overflow-x: hidden;
+    }
+
+    body {
+        margin: 0;
+        position: relative;
+    }
+
+    .contenedor-tablas{
+        position: absolute;
+        top: 180px;
+        left: 200px;
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .tabla{
+        margin: 0;
+        width: 600px;
+    }
+
+    .tabla-ejercicio{
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    .tabla-ejercicio td{
+        border: 1px solid black;
+        padding: 9px;
+        min-width: 0;
+        text-align: center;
+        min-height: 25px;
+    }
+
+    .tabla-ejercicio input{
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid black;
+        background-color: rgba(255, 255, 255, 0.184);
+        outline: none;
+        font-size: 16px;
+    }
+
+    .botones{
+        position: absolute;
+        top: 620px;
+        left: 200px;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    #boton-reintentar{
+        visibility: hidden;
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="indice">
+        <span class="pag_actual"></span>
+        <a href="primer_2.02.html" class="pag_diferent"></a>
+        <a href="primer_2.03.html" class="pag_diferent"></a>
+        <a href="primer_2.04.html" class="pag_diferent"></a>
+        <a href="primer_2.05.html" class="pag_diferent"></a>
+        <a href="primer_2.06.html" class="pag_diferent"></a>
+        <a href="primer_2.08.html" class="pag_diferent"></a>
+    </div>
+    <nav class="navbar2">
+        <div class="logo">1r de Batxillerat - L'Adjectiu</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>1. Completa aquesta taula:</b></div>
+        <div class="contenedor-tablas">
+            <div class="tabla">
+                <table class="tabla-ejercicio">
+                    <tr>
+                        <td><b>Masculí Singular</b></td>
+                        <td><b>Femení Singular</b></td>
+                        <td><b>Masculí Plural</b></td>
+                        <td><b>Femení Plural</b></td>
+                    </tr>
+                    <tr>
+                        <td>brut</td>
+                        <td>bruta</td>
+                        <td>bruts</td>
+                        <td>brutes</td>
+                    </tr>
+                    <tr>
+                        <td>sobri</td>
+                        <td><input type="text" class="respuesta" data-correct="sòbria"></td>
+                        <td><input type="text" class="respuesta" data-correct="sobris"></td>
+                        <td><input type="text" class="respuesta" data-correct="sòbries"></td>
+                    </tr>
+                    <tr>
+                        <td>idoni</td>
+                        <td><input type="text" class="respuesta" data-correct="idònia"></td>
+                        <td><input type="text" class="respuesta" data-correct="idonis"></td>
+                        <td><input type="text" class="respuesta" data-correct="idònies"></td>
+                    </tr>
+                    <tr>
+                        <td>continu</td>
+                        <td><input type="text" class="respuesta" data-correct="contínua"></td>
+                        <td><input type="text" class="respuesta" data-correct="continus"></td>
+                        <td><input type="text" class="respuesta" data-correct="contínues"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="respuesta" data-correct="culte"></td>
+                        <td>culta</td>
+                        <td><input type="text" class="respuesta" data-correct="cultes"></td>
+                        <td><input type="text" class="respuesta" data-correct="cultes"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="respuesta" data-correct="ample"></td>
+                        <td><input type="text" class="respuesta" data-correct="ampla"></td>
+                        <td>amples</td>
+                        <td><input type="text" class="respuesta" data-correct="amples"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="respuesta" data-correct="pobre"></td>
+                        <td><input type="text" class="respuesta" data-correct="pobra"></td>
+                        <td><input type="text" class="respuesta" data-correct="pobres"></td>
+                    <td>pobres</td>
+                    </tr>
+                    <tr>
+                        <td>tebi</td>
+                        <td><input type="text" class="respuesta" data-correct="tèbia"></td>
+                        <td><input type="text" class="respuesta" data-correct="tebis"></td>
+                        <td><input type="text" class="respuesta" data-correct="tèbies"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="respuesta" data-correct="homogeni"></td>
+                        <td><input type="text" class="respuesta" data-correct="homogènia"></td>
+                        <td>homogenis</td>
+                        <td><input type="text" class="respuesta" data-correct="homogènies"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="respuesta" data-correct="aspre"></td>
+                        <td><input type="text" class="respuesta" data-correct="aspra"></td>
+                        <td><input type="text" class="respuesta" data-correct="aspres"></td>
+                        <td>aspres</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tabla">
+                <table class="tabla-ejercicio">
+                    <tr>
+                        <td><b>Masculí Singular</b></td>
+                        <td><b>Femení Singular</b></td>
+                        <td><b>Masculí Plural</b></td>
+                        <td><b>Femení Plural</b></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="respuesta" data-correct="nu"></td>
+                        <td><input type="text" class="respuesta" data-correct="nua"></td>
+                        <td><input type="text" class="respuesta" data-correct="nus"></td>
+                        <td>nues</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="respuesta" data-correct="agre"></td>
+                        <td>agra</td>
+                        <td><input type="text" class="respuesta" data-correct="agres"></td>
+                        <td><input type="text" class="respuesta" data-correct="agres"></td>
+                    </tr>
+                    <tr>
+                        <td>feixuc</td>
+                        <td><input type="text" class="respuesta" data-correct="feixuc"></td>
+                        <td><input type="text" class="respuesta" data-correct="feixuga"></td>
+                        <td><input type="text" class="respuesta" data-correct="feixugues"></td>
+                    </tr>
+                    <tr>
+                        <td>comú</td>
+                        <td><input type="text" class="respuesta" data-correct="comuna"></td>
+                        <td><input type="text" class="respuesta" data-correct="comuns"></td>
+                        <td><input type="text" class="respuesta" data-correct="comunes"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="respuesta" data-correct="gris"></td>
+                        <td><input type="text" class="respuesta" data-correct="grisa"></td>
+                        <td>grisos</td>
+                        <td><input type="text" class="respuesta" data-correct="grises"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="respuesta" data-correct="dolç"></td>
+                        <td>dolça</td>
+                        <td><input type="text" class="respuesta" data-correct="dolços"></td>
+                        <td><input type="text" class="respuesta" data-correct="dolces"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="respuesta" data-correct="fix"></td>
+                        <td>fixa</td>
+                        <td><input type="text" class="respuesta" data-correct="fixos"></td>
+                        <td><input type="text" class="respuesta" data-correct="fixes"></td>
+                        </tr>
+                    <tr>
+                        <td>fresc</td>
+                        <td><input type="text" class="respuesta" data-correct="fresca"></td>
+                        <td><input type="text" class="respuesta" data-correct="frescos"></td>
+                        <td><input type="text" class="respuesta" data-correct="fresques"></td>
+                    </tr>
+                    <tr>
+                        <td>ros</td>
+                        <td><input type="text" class="respuesta" data-correct="rossa"></td>
+                        <td><input type="text" class="respuesta" data-correct="rossos"></td>
+                        <td><input type="text" class="respuesta" data-correct="rosses"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="respuesta" data-correct="romanès"></td>
+                        <td><input type="text" class="respuesta" data-correct="romanesa"></td>
+                        <td>romanesos</td>
+                        <td><input type="text" class="respuesta" data-correct="romaneses"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar">Reintentar</button>
+        </div>
+    </div>
+    <script>
+    const inputs = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        inputs.forEach(input => {
+            const valor = input.value.trim().toLowerCase();
+            const correcta = input.dataset.correct.toLowerCase();
+            if (valor === correcta) {
+                input.style.background = "rgba(0,255,0,0.25)";
+                input.disabled = true;
+            } else {
+                input.style.background = "rgba(255,0,0,0.25)";
+            }
+        });
+        botonReintentar.style.visibility = "visible";
+    }
+
+    function reintentar() {
+        inputs.forEach(input => {
+            input.value = "";
+            input.style.background = "rgba(255, 255, 255, 0.184)"; // estado inicial
+            input.disabled = false; // desbloqueamos todos
+        });
+        botonReintentar.style.visibility = "hidden"; // ocultamos reintentar
+    }
+
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Fonètica</title>
+
+    <style>
+        html, body {
+            overflow-x: hidden;
+        }
+
+        body {
+            margin: 0;
+            position: relative;
+        }
+
+        .tabla {
+            position: absolute; 
+            top: 180px; 
+            left: 200px; 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            column-gap: 80px;
+            counter-reset: letra;
+            width: 1100px;
+        }
+
+        .lista {
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        .lista li {
+            counter-increment: letra;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        .lista li::before {
+            content: counter(letra, lower-alpha) ") ";
+            width: 30px;
+        }
+        .lista li span {
+            width: 100px;
+            margin-right: 1px;
+        }
+
+        .paraula {
+            cursor: pointer;
+            border-radius: 4px;
+            transition: 0.2s;
+            user-select: none;
+        }
+
+        .paraula:hover {
+            background: rgba(251,167,78,0.15);
+        }
+
+        .seleccionada {
+            text-decoration: underline;
+            text-decoration-thickness: 1.5px;
+            text-underline-offset: 4px;
+        }
+
+        .correcta {
+            background: rgba(0,255,0,0.25);
+        }
+
+        .incorrecta {
+            background: rgba(255,0,0,0.25);
+        }
+
+        .mensaje-faltantes {
+            display: none;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .botones {
+            position: absolute;
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            align-self: flex-start;
+            top: 300px;
+            left: 200px;
+        }
+
+        .botones button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            background: #fba74e84;
+            color: #000000;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-right: 30px;
+        }
+
+        .botones button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .indice {
+            position: fixed;
+            bottom: 5%;
+            left: 50%;
+            display: flex;
+            transform: translateX(-50%);
+            gap: 12px;
+        }
+
+        .pag_diferent {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #fba74eb2;
+            display: inline-block;
+            transition: 0.2s;
+        }
+
+        .pag_diferent:hover {
+            background-color: #fba74e;
+            transform: scale(1.15);
+        }
+
+        .pag_actual {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #e98315;
+            cursor: default;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="indice">
+        <a href="fonetica_01.html" class="pag_diferent"></a>
+        <a href="fonetica_02.html" class="pag_diferent"></a>
+        <a href="fonetica_03.html" class="pag_diferent"></a>
+        <a href="fonetica_04.html" class="pag_diferent"></a>
+        <a href="fonetica_05.html" class="pag_diferent"></a>
+        <a href="fonetica_06.html" class="pag_diferent"></a>
+        <a href="fonetica_07.html" class="pag_diferent"></a>
+        <a href="fonetica_08.html" class="pag_diferent"></a>
+        <a href="fonetica_09.html" class="pag_diferent"></a>
+        <a href="fonetica_10.html" class="pag_diferent"></a>
+        <a href="fonetica_11.html" class="pag_diferent"></a>
+        <a href="fonetica_12.html" class="pag_diferent"></a>
+        <a href="fonetica_13.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="fonetica_15.html" class="pag_diferent"></a>
+        <a href="fonetica_16.html" class="pag_diferent"></a>
+        <a href="fonetica_17.html" class="pag_diferent"></a>
+        <a href="fonetica_18.html" class="pag_diferent"></a>
+        <a href="fonetica_19.html" class="pag_diferent"></a>
+        <a href="fonetica_20.html" class="pag_diferent"></a>
+        <a href="fonetica_21.html" class="pag_diferent"></a>
+    </div>
+
+    <nav class="navbar2">
+        <div class="logo">Fonètica</div>
+
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>14. (2n Batx) Selecciona en cada text els cinc mots que contenen el so palatal fricatiu sonor [ʒ]:</b></div>
+        <div class="tabla">
+            <ol class="lista">
+                <li>
+                    <span class='paraula'>Vam</span>
+                    <span class='paraula' data-correcte="true">ajuntar-nos</span>
+                    <span class='paraula'>tots</span>
+                    <span class='paraula'>en</span>
+                    <span class='paraula'>una</span>
+                    <span class='paraula'>masia</span>
+                    <span class='paraula'>de</span>
+                    <span class='paraula' data-correcte="true">Girona</span>
+                    <span class='paraula'>per</span>
+                    <span class='paraula'>passar</span>
+                    <span class='paraula'>uns</span>
+                    <span class='paraula'>quants</span>
+                    <span class='paraula'>dies</span>
+                    <span class='paraula'>en</span>
+                    <span class='paraula'>família</span>
+                    <span class='paraula'>amb</span>
+                    <span class='paraula'>els</span>
+                    <span class='paraula'>xiquets.</span>
+                    <span class='paraula'>Vam</span>
+                    <span class='paraula'>gaudir</span>
+                    <span class='paraula'>d'allò</span>
+                    <span class='paraula'>més</span>
+                    <span class='paraula' data-correcte="true">jugant</span>
+                    <span class='paraula'>a</span>
+                    <span class='paraula'>fet</span>
+                    <span class='paraula'>i</span>
+                    <span class='paraula'>amagar</span>
+                    <span class='paraula'>i</span>
+                    <span class='paraula'>fent</span>
+                    <span class='paraula' data-correcte="true">gimcanes</span>
+                    <span class='paraula'>al</span>
+                    <span class='paraula'>bosc.</span>
+                    <span class='paraula'>Et</span>
+                    <span class='paraula' data-correcte="true">juro</span>
+                    <span class='paraula'>que</span>
+                    <span class='paraula'>feia</span>
+                    <span class='paraula'>temps</span>
+                    <span class='paraula'>que</span>
+                    <span class='paraula'>no</span>
+                    <span class='paraula'>xalàvem</span>
+                    <span class='paraula'>tant.</span>
+                </li>
+
+                <li>
+                    <span class='paraula'>El</span>
+                    <span class='paraula'data-correcte="true">pagès</span>
+                    <span class='paraula'>que</span>
+                    <span class='paraula'>viu</span>
+                    <span class='paraula'>al</span>
+                    <span class='paraula'>costat</span>
+                    <span class='paraula'>de</span>
+                    <span class='paraula'>ma</span>
+                    <span class='paraula'>mare</span>
+                    <span class='paraula'>sovint</span>
+                    <span class='paraula'>em</span>
+                    <span class='paraula'>regala</span>
+                    <span class='paraula'data-correcte="true">albergínies.</span>
+                    <span class='paraula'data-correcte="true">Diumenge</span>
+                    <span class='paraula'>passat,</span>
+                    <span class='paraula'>vaig</span>
+                    <span class='paraula'>convidar</span>
+                    <span class='paraula'>en</span>
+                    <span class='paraula'data-correcte="true">Magí</span>
+                    <span class='paraula'>a</span>
+                    <span class='paraula'>sopar</span>
+                    <span class='paraula'>i</span>
+                    <span class='paraula'>li'n</span>
+                    <span class='paraula'>vaig</span>
+                    <span class='paraula'>preparar</span>
+                    <span class='paraula'>un</span>
+                    <span class='paraula'>bon</span>
+                    <span class='paraula'>plat</span>
+                    <span class='paraula'>amb</span>
+                    <span class='paraula'>all</span>
+                    <span class='paraula'>i</span>
+                    <span class='paraula'data-correcte="true">julivert.</span>
+                    <span class='paraula'>Van</span>
+                    <span class='paraula'>quedar</span>
+                    <span class='paraula'>d'allò</span>
+                    <span class='paraula'>més</span>
+                    <span class='paraula'>bones.</span>
+                </li>
+            </ol>
+        </div>
+
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar" style="display:none;">Reintentar</button>
+            <span id="mensaje-faltantes" class="mensaje-faltantes"></span>
+        </div>
+    </div>
+<script>
+    const palabras = document.querySelectorAll('.paraula');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+    const mensajeFaltantes = document.getElementById('mensaje-faltantes');
+
+    let corregido = false;
+
+    palabras.forEach(palabra => {
+        palabra.addEventListener('click', () => {
+            if (corregido) return;
+            palabra.classList.toggle('seleccionada');
+        });
+    });
+
+    function comprobarRespuestas() {
+        let faltantes = 0;
+        palabras.forEach(palabra => {
+            const seleccionada = palabra.classList.contains('seleccionada');
+            const correcta = palabra.dataset.correcte === "true";
+            if (seleccionada && correcta) {
+                palabra.classList.add('correcta');
+            }
+            else if (seleccionada && !correcta) {
+                palabra.classList.add('incorrecta');
+            }
+            else if (!seleccionada && correcta) {
+                faltantes++;
+            }
+        });
+
+        corregido = true;
+        botonReintentar.style.display = "inline-block";
+        if (faltantes > 0) {
+            mensajeFaltantes.style.display = "flex";
+            if (faltantes === 1) {
+                mensajeFaltantes.textContent = "Falta 1 paraula per seleccionar.";
+            } else {
+                mensajeFaltantes.textContent =
+                    "Falten " + faltantes + " paraules per seleccionar.";
+            }
+        } else {
+            mensajeFaltantes.style.display = "none";
+            mensajeFaltantes.textContent = "";
+        }
+    }
+
+    function reintentar() {
+        palabras.forEach(palabra => {
+            palabra.classList.remove(
+                'seleccionada',
+                'correcta',
+                'incorrecta',
+            );
+        });
+        corregido = false;
+        botonReintentar.style.display = "none";
+        mensajeFaltantes.style.display = "none";
+        mensajeFaltantes.textContent = "";
+    }
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+
+</script>
+
+</body>
+</html>

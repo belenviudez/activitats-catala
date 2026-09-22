@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+    <style>
+        .boton-fijo {
+            margin-bottom: 10px;
+            width: 280px;
+            height: 180px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffb362;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .botones {
+            display: flex;
+            gap: 20px;
+            margin-left: 100px;
+            margin-right: 100px;
+            justify-content: center;
+            margin-top: 250px;
+            flex-wrap: wrap;
+            max-width: fit-content;
+        }
+
+        .boton-fijo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .boton-fijo .titulo {
+            padding: 12px 25px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .boton-fijo .subtexto {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .boton-fijo:hover .titulo {
+            top: 30%;
+            transform: translate(-50%, -50%);
+        }
+
+        .boton-fijo:hover .subtexto {
+            opacity: 1;
+        }
+
+        .botones .boton-fijo {
+            background-color: #ffd190;
+        }
+    </style>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CATALÀ</title>
+    </head>
+    <script src="script.js"></script>
+    <body>
+        <nav class="navbar">
+            <div class="logo">Català</div>
+            <ul class="menu" id="menu">
+                <li><a href="index_primer.html">1r de Batxillerat</a></li>
+                <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Llengua Catalana</h1>
+            <div class="botones">
+                <button class="boton-fijo" onclick="location.href='index_primer.html'">
+                    <span class="titulo">1R BATX</span>
+                    <span class="subtexto">Pràctica de les activitats del llibre de 1r de Batxillerat.</span>
+                </button>
+
+                <button class="boton-fijo" onclick="location.href='index_segon.html'">
+                    <span class="titulo">2N BATX</span>
+                    <span class="subtexto">Pràctica de les activitats del llibre de 2n de Batxillerat.</span>
+                </button>
+
+                <button class="boton-fijo" onclick="location.href='derivacio_01.html'">
+                    <span class="titulo">DERIVACIÓ</span>
+                    <span class="subtexto">Pràctica de les activitats de derivació per la Selectivitat.</span>
+                </button>
+
+                <button class="boton-fijo" onclick="location.href='referent_01.html'">
+                    <span class="titulo">REFERENT</span>
+                    <span class="subtexto">Pràctica de les activitats de cercar el referent per la Selectivitat.</span>
+                </button>
+
+                <button class="boton-fijo" onclick="location.href='sintaxi_01.html'">
+                    <span class="titulo">SINTAXI</span>
+                    <span class="subtexto">Pràctica de les activitats de sintaxi per la Selectivitat.</span>
+                </button>
+
+                <button class="boton-fijo" onclick="location.href='verbs_01.html'">
+                    <span class="titulo">VERBS</span>
+                    <span class="subtexto">Pràctica de les activitats de verbs per la Selectivitat.</span>
+                </button>
+
+                <button class="boton-fijo" onclick="location.href='fonetica_01.html'">
+                    <span class="titulo">FONÈTICA</span>
+                    <span class="subtexto">Pràctica de les activitats de fonètica per la Selectivitat.</span>
+                </button>
+
+                <button class="boton-fijo" onclick="location.href='pronoms_01.html'">
+                    <span class="titulo">PRONOMS</span>
+                    <span class="subtexto">Pràctica de les activitats de substitució pronominal.</span>
+                </button>
+
+                <!--<button class="boton-fijo" onclick="location.href='pronoms_01.html'">
+                    <span class="titulo">NORMATIVA</span>
+                    <span class="subtexto">Pràctica de les activitats relacionades amb la normativa.</span>
+                </button> -->
+            </div> 
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>1r de Batxillerat - El Verb</title>
+    <style>
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .tabla{
+        position: absolute;
+        top: 180px; 
+        left: 200px; 
+    }
+
+    .tabla-ejercicio{
+        border-collapse: collapse;
+    }
+
+    .tabla-ejercicio td{
+        border: 1px solid black;
+        padding: 10px;
+        min-width: 120px;
+        text-align: center;
+    }
+
+    .tabla-ejercicio input{
+        width: 150px;
+        border: none;
+        border-bottom: 2px solid black;
+        background-color: rgba(255, 255, 255, 0.184);
+        outline: none;
+        font-size: 16px;
+    }
+
+    .botones{
+        position: absolute;
+        top: 525px; 
+        left: 200px; 
+    }
+
+    .vacia {
+    border: none !important;
+    background: transparent;
+    }
+
+    .botones button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #fba74e84;
+        color: #000000;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-right: 30px;
+    }
+
+    .botones button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    #boton-reintentar{
+        visibility: hidden;
+    }
+
+    .indice {
+        position: fixed;
+        bottom: 5%;
+        left: 50%;
+        display: flex;
+        transform: translateX(-50%);
+        gap: 12px;
+    }
+
+    .pag_diferent {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #fba74eb2;
+        display: inline-block;
+        transition: 0.2s;
+    }
+
+    .pag_diferent:hover {
+        background-color: #fba74e;
+        transform: scale(1.15);
+    }
+
+    .pag_actual {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #e98315;
+        cursor: default;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="indice">
+        <a href="primer_5.01.html" class="pag_diferent"></a>
+        <a href="primer_5.02.html" class="pag_diferent"></a>
+        <a href="primer_5.03.html" class="pag_diferent"></a>
+        <a href="primer_5.04.html" class="pag_diferent"></a>
+        <a href="primer_5.05.html" class="pag_diferent"></a>
+        <a href="primer_5.08.html" class="pag_diferent"></a>
+        <span class="pag_actual"></span>
+        <a href="primer_5.12.html" class="pag_diferent"></a>
+        <a href="primer_5.13.html" class="pag_diferent"></a>
+        <a href="primer_5.14.html" class="pag_diferent"></a>
+        <a href="primer_5.15.html" class="pag_diferent"></a>
+        <a href="primer_5.16.html" class="pag_diferent"></a>
+        <a href="primer_5.17.html" class="pag_diferent"></a>
+    </div>
+    <nav class="navbar2">
+        <div class="logo">1r de Batxillerat - El Verb</div>
+        <ul class="menu" id="menu">
+            <li><a href="index_primer.html">1r de Batxillerat</a></li>
+            <li><a href="index_segon.html">2n de Batxillerat</a></li>
+            <li><a href="index.html">Casa</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero2">
+        <div class="titol"><b>11. Conjuga els temps verbals següents:</b></div>
+        <div class="tabla">
+            <table class="tabla-ejercicio">
+
+                <tr>
+                    <td class="vacia"></td>
+                    <td><b>Passat simple</b></td>
+                    <td><b>Present de subjuntiu</b></td>
+                    <td><b>Imperfet de subjuntiu</b></td>
+                </tr>
+
+                <tr>
+                    <td class="vacia"></td>
+                    <td><b>Incloure</b></td>
+                    <td><b>Seure</b></td>
+                    <td><b>Beure</b></td>
+                </tr>
+
+                <tr>
+                    <td><b>jo</b></td>
+                    <td><input type="text" class="respuesta" data-correct="incloguí"></td>
+                    <td><input type="text" class="respuesta" data-correct="segui"></td>
+                    <td><input type="text" class="respuesta" data-correct="begués"></td>
+                </tr>
+
+                <tr>
+                    <td><b>tu</b></td>
+                    <td><input type="text" class="respuesta" data-correct="inclogueres"></td>
+                    <td><input type="text" class="respuesta" data-correct="seguis"></td>
+                    <td><input type="text" class="respuesta" data-correct="beguessis"></td>
+                </tr>
+
+                <tr>
+                    <td><b>ell/ella</b></td>
+                    <td><input type="text" class="respuesta" data-correct="inclogué"></td>
+                    <td><input type="text" class="respuesta" data-correct="segui"></td>
+                    <td><input type="text" class="respuesta" data-correct="begués"></td>
+                </tr>
+
+                <tr>
+                    <td><b>nosaltres</b></td>
+                    <td><input type="text" class="respuesta" data-correct="incloguérem"></td>
+                    <td><input type="text" class="respuesta" data-correct="seguem"></td>
+                    <td><input type="text" class="respuesta" data-correct="beguéssim"></td>
+                </tr>
+
+                <tr>
+                    <td><b>vosaltres</b></td>
+                    <td><input type="text" class="respuesta" data-correct="incloguéreu"></td>
+                    <td><input type="text" class="respuesta" data-correct="segueu"></td>
+                    <td><input type="text" class="respuesta" data-correct="beguéssiu"></td>
+                </tr>
+
+                <tr>
+                    <td><b>ells/elles</b></td>
+                    <td><input type="text" class="respuesta" data-correct="inclogueren"></td>
+                    <td><input type="text" class="respuesta" data-correct="seguin"></td>
+                    <td><input type="text" class="respuesta" data-correct="beguessin"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="botones">
+            <button id="boton-corregir">Corregir</button>
+            <button id="boton-reintentar">Reintentar</button>
+        </div>
+    </div>
+    <script>
+    const inputs = document.querySelectorAll('.respuesta');
+    const botonCorregir = document.getElementById('boton-corregir');
+    const botonReintentar = document.getElementById('boton-reintentar');
+
+    function comprobarRespuestas() {
+        inputs.forEach(input => {
+            const valor = input.value.trim().toLowerCase();
+            const correcta = input.dataset.correct.toLowerCase();
+            if (valor === correcta) {
+                input.style.background = "rgba(0,255,0,0.25)";
+                input.disabled = true;
+            } else {
+                input.style.background = "rgba(255,0,0,0.25)";
+            }
+        });
+        botonReintentar.style.visibility = "visible";
+    }
+
+    function reintentar() {
+        inputs.forEach(input => {
+            input.value = "";
+            input.style.background = "rgba(255, 255, 255, 0.184)"; // estado inicial
+            input.disabled = false; // desbloqueamos todos
+        });
+        botonReintentar.style.visibility = "hidden"; // ocultamos reintentar
+    }
+    botonCorregir.addEventListener('click', comprobarRespuestas);
+    botonReintentar.addEventListener('click', reintentar);
+        
+    </script>
+
+</body>
+</html>
